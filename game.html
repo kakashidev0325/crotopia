@@ -1,0 +1,3652 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="CROTOPIA Game">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="description" content="Crotopia pet game. Feed the royal cat and watch it grow through the kingdom. Ticker CROTOPIA.">
+    <meta name="keywords" content="Crotopia, CROTOPIA, pet game, royal cat, kingdom, meme">
+    <meta name="author" content="Crotopia Team">
+    <title>Crotopia — Pet Game</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="static/css/simplebar.css">
+    <link rel="stylesheet" href="static/css/swiper-bundle.css">
+    <link rel="stylesheet" href="static/css/ff-1.css">
+    <link rel="stylesheet" href="static/css/ff-2.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- Preload important images -->
+    <link rel="preload" href="logo.png" as="image">
+    <link rel="preload" href="logo.png" as="image">
+    <!-- Three.js for 3D Graphics -->
+    <script src="static/js/three.min.js"></script>
+</head>
+
+<body class="bg-primary overflow-x-hidden">
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg primary-header primary-header--transparent-light-alt primary-header--fixed top-0 primary-header-crossed:full-dark">
+        <div class="container align-items-lg-center">
+            <!-- Logo -->
+            <a class="logo" href="index.html">
+                <img src="logo.png" alt="image" class="logo__img logo__img--light">
+            </a>
+            <!-- Logo End-->
+            <!-- Mobile Menu Toggler -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar0" aria-controls="navbar0" aria-expanded="false" aria-label="Toggle navigation">
+                <iconify-icon icon="solar:hamburger-menu-line-duotone"></iconify-icon>
+            </button>
+            <!-- Mobile Menu Toggler End-->
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbar0">
+                <ul class="navbar-nav flex-grow-1 justify-content-center mx-lg-4 mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="contact.html">Bulletin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="game.html">Game</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="whitepaper.html">Whitepaper</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="nft.html">AI NFT</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-3 ms-lg-auto">
+                    <a href="contact.html" class="btn btn-light fw-bold text-heading" target="_blank">Buy Now</a>
+                </div>
+            </div>
+            <!-- Menu End -->
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <!-- Game Hero Section -->
+            <section class="hero-section py-12 position-relative overflow-hidden" style="margin-top: 80px;">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-12">
+                            <div class="position-relative z-2">
+                                <h1 class="h2 text-light text-shadow-md mb-3">
+                                    👑 <span class="text-warning">CROTOPIA PET GAME</span>
+                                </h1>
+                                <p class="text-light mb-4">Feed, Grow, Hunt & Earn!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Background Elements -->
+                <img src="static/picture/hero-bg-1.png" alt="Background" class="img-fluid w-100 position-absolute start-0 bottom-0 z-n1 pointer-none">
+            </section>
+
+            <!-- Game Instructions & Disclaimer -->
+            <section class="py-4 bg-warning">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="text-center">
+                                <h4 class="text-dark mb-3">🎮 How to Play</h4>
+                                <p class="text-dark mb-4">Use CROTOPIA treats and watch the royal cat grow from a waving kitten to Crotopia Power.</p>
+                                
+                                <div class="alert alert-dark d-inline-block px-4 py-2 mb-0">
+                                    <strong>⚠️ ENTERTAINMENT ONLY</strong><br>
+                                    <small>This is a simulation game for entertainment purposes only. You will not lose any real CROTOPIA tokens, nor will you receive any real tokens from playing this game.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3D Game Interface - Interactive Pet Game -->
+            <section class="py-2 bg-secondary position-relative">
+                <div class="container-fluid px-2">
+                    <!-- Top Status Bar - Floating Over 3D Scene -->
+                    <div class="row g-1 mb-2 position-relative" style="z-index: 10;">
+                        <div class="col-4">
+                            <div class="bg-gradient-primary text-white rounded-pill px-2 py-1 text-center glass-effect">
+                                <small class="fw-bold">💰 <span id="balanceDisplay">100B</span></small>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="bg-gradient-success text-white rounded-pill px-2 py-1 text-center glass-effect">
+                                <small class="fw-bold" id="tigerLevel">Royal Kitten</small>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="bg-gradient-warning text-white rounded-pill px-2 py-1 text-center glass-effect">
+                                <small class="fw-bold">⭐ <span id="expDisplay">0</span></small>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <!-- 3D Scene Container -->
+                    <div class="row mb-2">
+                        <div class="col-12">
+                            <div id="game3DContainer" class="game-3d-scene rounded-4 position-relative overflow-hidden" style="height: 400px; background: linear-gradient(180deg, #87CEEB 0%, #98D8C8 100%);">
+                                <!-- Three.js will render here -->
+                                <canvas id="game3DCanvas" style="display: block; width: 100%; height: 100%;"></canvas>
+                                
+                                <!-- Scene Info Overlay -->
+                                <div class="scene-info position-absolute top-0 end-0 m-2 glass-effect rounded-3 p-2" style="z-index: 5;">
+                                    <small class="text-white d-block">
+                                        <iconify-icon icon="wi:day-sunny" class="text-warning"></iconify-icon>
+                                        <span id="timeOfDay">Day</span>
+                                    </small>
+                                    <small class="text-white d-block">
+                                        <iconify-icon icon="mdi:temperature" class="text-info"></iconify-icon>
+                                        <span id="weather">Sunny</span>
+                                    </small>
+                                </div>
+                                
+                                <!-- Interactive Buttons Overlay -->
+                                <div class="game-controls position-absolute bottom-0 start-50 translate-middle-x mb-3 d-flex gap-2" style="z-index: 5;">
+                                    <button class="btn btn-sm btn-primary shadow-lg" id="petTigerBtn" style="border-radius: 20px; padding: 8px 20px;">
+                                        <iconify-icon icon="mdi:hand-heart" style="font-size: 1.2rem;"></iconify-icon>
+                                        <span class="ms-1">Pet</span>
+                                    </button>
+                                    <button class="btn btn-sm btn-success shadow-lg" id="quickFeedBtn" style="border-radius: 20px; padding: 8px 20px;">
+                                        <iconify-icon icon="mdi:food-drumstick" style="font-size: 1.2rem;"></iconify-icon>
+                                        <span class="ms-1">Quick Feed</span>
+                                    </button>
+                                </div>
+                                
+                                <!-- Floating Tips -->
+                                <div class="floating-tip position-absolute top-50 start-50 translate-middle" id="floatingTip" style="z-index: 6; display: none; pointer-events: none;">
+                                    <div class="bg-warning text-dark rounded-pill px-4 py-2 shadow-lg fw-bold" style="font-size: 1.2rem;">
+                                        <span id="tipText">Great!</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tiger Info Card - Below 3D Scene -->
+                    <div class="row mb-2">
+                        <div class="col-12">
+                            <div class="tiger-info-card bg-white rounded-3 p-3 shadow-sm">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <div class="level-badge bg-warning text-dark rounded-pill px-3 py-1">
+                                            <small class="fw-bold">Lv.<span id="levelNumber">1</span></small>
+                                        </div>
+                                    <div>
+                                            <h6 class="mb-0 text-dark fw-bold" id="tigerName">Royal Kitten</h6>
+                                            <small class="text-muted" id="tigerDescription">A crowned kitten waving from the gates of Crotopia.</small>
+                                    </div>
+                                    </div>
+                                    <div class="tiger-mood-indicator" id="tigerMood" style="font-size: 2rem;">😊</div>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+
+                    <!-- Vital Status - More Realistic -->
+                    <div class="row g-2 mb-2">
+                        <div class="col-12">
+                            <div class="vital-stats-panel bg-white rounded-3 p-3 shadow-sm">
+                                <h6 class="mb-3 text-dark fw-bold d-flex align-items-center">
+                                    <iconify-icon icon="mdi:heart-pulse" class="me-2 text-danger"></iconify-icon>
+                                    Vital Status
+                                    <span class="ms-auto badge" id="overallCondition">Good</span>
+                                </h6>
+                                
+                                <!-- Hunger -->
+                                <div class="mb-2">
+                                    <div class="d-flex align-items-center justify-content-between mb-1">
+                                        <small class="fw-bold">
+                                            <iconify-icon icon="mdi:food-apple" class="text-danger"></iconify-icon>
+                                            Hunger
+                                        </small>
+                                        <small class="text-muted"><span id="hungerPercent">70</span>%</small>
+                                    </div>
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-danger" style="width: 70%" id="hungerBar"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Thirst -->
+                                <div class="mb-2">
+                                    <div class="d-flex align-items-center justify-content-between mb-1">
+                                        <small class="fw-bold">
+                                            <iconify-icon icon="mdi:water" class="text-info"></iconify-icon>
+                                            Thirst
+                                        </small>
+                                        <small class="text-muted"><span id="thirstPercent">50</span>%</small>
+                                    </div>
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-info" style="width: 50%" id="thirstBar"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Energy -->
+                                <div class="mb-2">
+                                    <div class="d-flex align-items-center justify-content-between mb-1">
+                                        <small class="fw-bold">
+                                            <iconify-icon icon="mdi:lightning-bolt" class="text-warning"></iconify-icon>
+                                            Energy
+                                        </small>
+                                        <small class="text-muted"><span id="energyPercent">100</span>%</small>
+                                    </div>
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-warning" style="width: 100%" id="energyBar"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Happiness -->
+                                <div class="mb-2">
+                                    <div class="d-flex align-items-center justify-content-between mb-1">
+                                        <small class="fw-bold">
+                                            <iconify-icon icon="mdi:emoticon-happy" class="text-success"></iconify-icon>
+                                            Happiness
+                                        </small>
+                                        <small class="text-muted"><span id="happinessPercent">80</span>%</small>
+                                    </div>
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-success" style="width: 80%" id="happinessBar"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Cleanliness -->
+                                <div>
+                                    <div class="d-flex align-items-center justify-content-between mb-1">
+                                        <small class="fw-bold">
+                                            <iconify-icon icon="mdi:shower" class="text-primary"></iconify-icon>
+                                            Cleanliness
+                                        </small>
+                                        <small class="text-muted"><span id="cleanlinessPercent">100</span>%</small>
+                                    </div>
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-primary" style="width: 100%" id="cleanlinessBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tiger Attributes - Enhanced -->
+                    <div class="row g-2 mb-3">
+                        <div class="col-12">
+                            <div class="attributes-panel bg-white rounded-3 p-3 shadow-sm">
+                                <h6 class="mb-3 text-dark fw-bold">
+                                    <iconify-icon icon="mdi:chart-box" class="me-2"></iconify-icon>
+                                    Attributes
+                                </h6>
+                                <div class="row g-2">
+                                    <div class="col-4">
+                                        <div class="attr-card bg-danger bg-opacity-10 rounded-2 p-2">
+                                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                                <small class="fw-bold text-danger">💪 STR</small>
+                                                <small class="text-muted"><span id="strengthValue">10</span></small>
+                                            </div>
+                                            <div class="progress" style="height: 6px;">
+                                                <div class="progress-bar bg-danger" style="width: 10%" id="strengthBar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="attr-card bg-success bg-opacity-10 rounded-2 p-2">
+                                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                                <small class="fw-bold text-success">⚡ SPD</small>
+                                                <small class="text-muted"><span id="speedValue">15</span></small>
+                                            </div>
+                                            <div class="progress" style="height: 6px;">
+                                                <div class="progress-bar bg-success" style="width: 15%" id="speedBar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="attr-card bg-info bg-opacity-10 rounded-2 p-2">
+                                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                                <small class="fw-bold text-info">🧠 INT</small>
+                                                <small class="text-muted"><span id="intelligenceValue">12</span></small>
+                                            </div>
+                                            <div class="progress" style="height: 6px;">
+                                                <div class="progress-bar bg-info" style="width: 12%" id="intelligenceBar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="attr-card bg-warning bg-opacity-10 rounded-2 p-2">
+                                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                                <small class="fw-bold text-warning">🏃 AGI</small>
+                                                <small class="text-muted"><span id="agilityValue">10</span></small>
+                                            </div>
+                                            <div class="progress" style="height: 6px;">
+                                                <div class="progress-bar bg-warning" style="width: 10%" id="agilityBar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="attr-card bg-primary bg-opacity-10 rounded-2 p-2">
+                                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                                <small class="fw-bold text-primary">✨ CHR</small>
+                                                <small class="text-muted"><span id="charismaValue">15</span></small>
+                                            </div>
+                                            <div class="progress" style="height: 6px;">
+                                                <div class="progress-bar bg-primary" style="width: 15%" id="charismaBar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="attr-card bg-secondary bg-opacity-10 rounded-2 p-2">
+                                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                                <small class="fw-bold text-secondary">❤️ AFF</small>
+                                                <small class="text-muted"><span id="affectionValue">50</span></small>
+                                            </div>
+                                            <div class="progress" style="height: 6px;">
+                                                <div class="progress-bar bg-secondary" style="width: 50%" id="affectionBar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <!-- Care Actions Panel -->
+                    <div class="row mb-2">
+                        <div class="col-12">
+                            <div class="care-actions-panel bg-gradient-info text-white rounded-3 p-3 mb-2">
+                                <h6 class="mb-2 fw-bold">
+                                    <iconify-icon icon="mdi:hand-heart" class="me-2"></iconify-icon>
+                                    Cat Care
+                                </h6>
+                                <div class="row g-2 text-center">
+                                    <div class="col-3">
+                                        <button class="btn btn-light w-100 care-btn" id="giveWaterBtn" title="Give Water">
+                                            <iconify-icon icon="mdi:cup-water" style="font-size: 1.3rem;"></iconify-icon>
+                                            <div class="small mt-1">Water</div>
+                                        </button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-light w-100 care-btn" id="bathBtn" title="Bath">
+                                            <iconify-icon icon="mdi:shower" style="font-size: 1.3rem;"></iconify-icon>
+                                            <div class="small mt-1">Bath</div>
+                                        </button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-light w-100 care-btn" id="playBtn" title="Play">
+                                            <iconify-icon icon="mdi:tennis-ball" style="font-size: 1.3rem;"></iconify-icon>
+                                            <div class="small mt-1">Play</div>
+                                        </button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-light w-100 care-btn" id="sleepBtn" title="Sleep">
+                                            <iconify-icon icon="mdi:sleep" style="font-size: 1.3rem;"></iconify-icon>
+                                            <div class="small mt-1">Sleep</div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions Panel -->
+                    <div class="row mb-2">
+                        <div class="col-12">
+                            <div class="quick-actions-panel bg-gradient-primary text-white rounded-3 p-3 mb-2">
+                                <h6 class="mb-2 fw-bold">
+                                    <iconify-icon icon="mdi:flash" class="me-2"></iconify-icon>
+                                    Quick Actions
+                                </h6>
+                                <div class="row g-2 text-center">
+                                    <div class="col-3">
+                                        <button class="btn btn-light w-100 quick-action-btn" id="autoFeedBtn">
+                                            <iconify-icon icon="mdi:robot" style="font-size: 1.3rem;"></iconify-icon>
+                                            <div class="small mt-1">Auto</div>
+                                        </button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-light w-100 quick-action-btn" id="maxFeedBtn">
+                                            <iconify-icon icon="mdi:food-variant" style="font-size: 1.3rem;"></iconify-icon>
+                                            <div class="small mt-1">Max Feed</div>
+                                        </button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-light w-100 quick-action-btn" id="collectAllBtn">
+                                            <iconify-icon icon="mdi:gift" style="font-size: 1.3rem;"></iconify-icon>
+                                            <div class="small mt-1">Collect</div>
+                                        </button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-light w-100 quick-action-btn" id="autoCareBtn">
+                                            <iconify-icon icon="mdi:auto-fix" style="font-size: 1.3rem;"></iconify-icon>
+                                            <div class="small mt-1">Auto Care</div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <!-- Food Shop - Grid Layout -->
+                    <div class="row mb-2">
+                        <div class="col-12">
+                            <div class="food-shop-card bg-white rounded-3 p-3">
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <h6 class="mb-0 fw-bold text-dark">🥩 Feed Your Cat</h6>
+                                    <small class="text-muted">
+                                        <span class="badge bg-success" id="recommendedFood">Recommended: 🐔</span>
+                                    </small>
+                                </div>
+                                <div class="row g-2">
+                                            <div class="col-4">
+                                        <div class="food-item bg-light rounded-2 p-2 text-center" data-meat="chicken" data-price="500000000" data-hunger="10" data-exp="2">
+                                            <div class="food-icon mb-1" style="font-size: 1.8rem;">🐔</div>
+                                            <div class="food-price text-primary fw-bold" style="font-size: 0.7rem;">500M</div>
+                                            <button class="btn btn-primary btn-sm w-100 buy-meat-btn" style="font-size: 0.7rem; padding: 4px;">Feed</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                        <div class="food-item bg-light rounded-2 p-2 text-center" data-meat="fish" data-price="800000000" data-hunger="15" data-exp="3">
+                                            <div class="food-icon mb-1" style="font-size: 1.8rem;">🐟</div>
+                                            <div class="food-price text-primary fw-bold" style="font-size: 0.7rem;">800M</div>
+                                            <button class="btn btn-primary btn-sm w-100 buy-meat-btn" style="font-size: 0.7rem; padding: 4px;">Feed</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                        <div class="food-item bg-light rounded-2 p-2 text-center" data-meat="beef" data-price="1500000000" data-hunger="20" data-exp="5">
+                                            <div class="food-icon mb-1" style="font-size: 1.8rem;">🥩</div>
+                                            <div class="food-price text-primary fw-bold" style="font-size: 0.7rem;">1.5B</div>
+                                            <button class="btn btn-primary btn-sm w-100 buy-meat-btn" style="font-size: 0.7rem; padding: 4px;">Feed</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                        <div class="food-item bg-light rounded-2 p-2 text-center" data-meat="premium" data-price="3000000000" data-hunger="30" data-exp="8">
+                                            <div class="food-icon mb-1" style="font-size: 1.8rem;">🦌</div>
+                                            <div class="food-price text-primary fw-bold" style="font-size: 0.7rem;">3B CROTOPIA</div>
+                                            <button class="btn btn-success btn-sm w-100 buy-meat-btn" style="font-size: 0.7rem; padding: 4px;">Premium Feed</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                        <div class="food-item bg-gradient-warning rounded-2 p-2 text-center" data-meat="legendary" data-price="6000000000" data-hunger="50" data-exp="15">
+                                            <div class="food-icon mb-1" style="font-size: 1.8rem;">🥇</div>
+                                            <div class="food-price text-dark fw-bold" style="font-size: 0.7rem;">6B CROTOPIA</div>
+                                            <button class="btn btn-warning btn-sm w-100 buy-meat-btn" style="font-size: 0.7rem; padding: 4px;">Legendary Feed</button>
+                                                </div>
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hunt Stats - Bottom Info -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="hunt-stats-card bg-dark bg-opacity-10 rounded-3 p-2">
+                                <div class="row text-center">
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">Total Hunted</small>
+                                        <small class="text-info fw-bold" id="totalHunted">0 CROTOPIA</small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">Hunt Count</small>
+                                        <small class="text-success fw-bold" id="huntCount">0 hunts</small>
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tiger Evolution Guide -->
+            <section class="section-space-y">
+                <div class="container">
+                    <div class="text-center mb-10">
+                        <h2 class="text-light text-stroke-md text-shadow-md fs-6vw mb-6">EVOLUTION STAGES</h2>
+                        <p class="fs-20 text-light">Watch your cat grow through the Crotopia kingdom!</p>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <div class="col-lg-2 col-md-4 col-6">
+                            <div class="bg-light border border-2x border-dark shadow-sharp rounded-5 p-3 text-center h-100">
+                                <img src="memes/01_Royal_Welcome.png" alt="Royal Kitten" class="evolution-tiger-img mb-2" style="width: 60px; height: 60px; object-fit: contain; border-radius: 10px;">
+                                <h6 class="text-heading mb-2">Royal Kitten</h6>
+                                <small class="text-muted">0-99 XP</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-6">
+                            <div class="bg-light border border-2x border-dark shadow-sharp rounded-5 p-3 text-center h-100">
+                                <img src="memes/02_Royal_Throne.png" alt="Throne Cat" class="evolution-tiger-img mb-2" style="width: 60px; height: 60px; object-fit: contain; border-radius: 10px;">
+                                <h6 class="text-heading mb-2">Throne Cat</h6>
+                                <small class="text-muted">100-299 XP</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-6">
+                            <div class="bg-light border border-2x border-dark shadow-sharp rounded-5 p-3 text-center h-100">
+                                <img src="memes/03_Space_Rocket.png" alt="Sky Explorer" class="evolution-tiger-img mb-2" style="width: 60px; height: 60px; object-fit: contain; border-radius: 10px;">
+                                <h6 class="text-heading mb-2">Sky Explorer</h6>
+                                <small class="text-muted">300-599 XP</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-6">
+                            <div class="bg-light border border-2x border-dark shadow-sharp rounded-5 p-3 text-center h-100">
+                                <img src="memes/04_Kingdom_Adventure.png" alt="Kingdom Cat" class="evolution-tiger-img mb-2" style="width: 60px; height: 60px; object-fit: contain; border-radius: 10px;">
+                                <h6 class="text-heading mb-2">Kingdom Cat</h6>
+                                <small class="text-muted">600-999 XP</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-6">
+                            <div class="bg-light border border-2x border-dark shadow-sharp rounded-5 p-3 text-center h-100">
+                                <img src="memes/06_Royal_Vacation.png" alt="Vacation Royal" class="evolution-tiger-img mb-2" style="width: 60px; height: 60px; object-fit: contain; border-radius: 10px;">
+                                <h6 class="text-heading mb-2">Vacation Royal</h6>
+                                <small class="text-muted">1000-1999 XP</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-6">
+                            <div class="bg-warning border border-2x border-dark shadow-sharp rounded-5 p-3 text-center h-100">
+                                <img src="memes/10_Crotopia_Power.png" alt="Crotopia Power" class="evolution-tiger-img mb-2" style="width: 60px; height: 60px; object-fit: contain; border-radius: 10px;">
+                                <h6 class="text-dark mb-2">Crotopia Power</h6>
+                                <small class="text-dark">2000+ XP</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Game Instructions -->
+            <section class="section-space-y bg-secondary">
+                <div class="container">
+                    <div class="text-center mb-10">
+                        <h2 class="text-light text-stroke-md text-shadow-md fs-6vw mb-6">HOW TO PLAY</h2>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <div class="col-lg-4">
+                            <div class="bg-light border border-2x border-dark shadow-sharp rounded-5 p-6 text-center h-100">
+                                <iconify-icon icon="material-symbols:shopping-cart" class="fs-60 text-primary mb-4"></iconify-icon>
+                                <h5 class="text-heading mb-3">1. Buy Meat</h5>
+                                <p class="text-muted">Use CROTOPIA treats to stock the royal pantry.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="bg-light border border-2x border-dark shadow-sharp rounded-5 p-6 text-center h-100">
+                                <iconify-icon icon="material-symbols:restaurant" class="fs-60 text-success mb-4"></iconify-icon>
+                                <h5 class="text-heading mb-3">2. Feed Your Cat</h5>
+                                <p class="text-muted">Feed your cat to ease hunger and gain experience.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="bg-light border border-2x border-dark shadow-sharp rounded-5 p-6 text-center h-100">
+                                <iconify-icon icon="material-symbols:trending-up" class="fs-60 text-warning mb-4"></iconify-icon>
+                                <h5 class="text-heading mb-3">3. Watch It Grow</h5>
+                                <p class="text-muted">As your cat gains XP, it grows into the next royal form.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="section-space-y bg-dark">
+                <div class="container">
+                    <div class="text-center">
+                        <img src="logo.png" alt="Crotopia Logo" class="mb-6" style="height:72px;width:72px;object-fit:cover;border-radius:50%">
+                        <h3 class="text-light text-stroke mb-4">Feed Your Cat, Watch the Kingdom Grow!</h3>
+                        <p class="text-light opacity-75 mb-6">Crotopia Game - A fun way to interact with the Crotopia ecosystem.</p>
+                        <div class="d-flex justify-content-center gap-4 mb-6">
+                            <a href="https://x.com/crotopia_x" class="btn btn-icon btn-lg btn-warning rounded-circle" target="_blank" rel="noopener">
+                                <iconify-icon icon="ri:twitter-x-fill"></iconify-icon>
+                            </a>
+                            <a href="#" class="btn btn-icon btn-lg btn-warning rounded-circle">
+                                <iconify-icon icon="ic:baseline-telegram"></iconify-icon>
+                            </a>
+                        </div>
+                        <p class="text-light opacity-50 mb-0">&copy; 2026 Crotopia. All rights reserved. | Built with 👑 by the community</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="static/js/bootstrap.bundle.js"></script>
+    <script src="static/js/iconify.js"></script>
+    <script src="static/js/simplebar.js"></script>
+    <script src="static/js/gsap.min.js"></script>
+    <script src="static/js/ScrollSmoother.min.js"></script>
+    <script src="static/js/ScrollTrigger.min.js"></script>
+    <script src="static/js/SplitText.min.js"></script>
+    <script src="static/js/Flip.min.js"></script>
+    <script src="static/js/app.js"></script>
+    
+    <!-- Custom Preloader Styles -->
+    <style>
+        .preloader-logo {
+            width: 300px;
+            height: 300px;
+            object-fit: contain;
+            animation: logoFloat 2s ease-in-out infinite alternate;
+            filter: drop-shadow(0 0 20px rgba(255, 193, 7, 0.8));
+        }
+        
+        @keyframes logoFloat {
+            0% {
+                transform: translateY(0px) scale(1);
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(-15px) scale(1.02);
+                opacity: 1;
+            }
+        }
+        
+        .pl__coin-inscription {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Enhanced preloader animation */
+        .preloader {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Add loading text */
+        .preloader::after {
+            content: "Loading Crotopia Game...";
+            position: absolute;
+            bottom: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffc107;
+            font-size: 18px;
+            font-weight: bold;
+            animation: loadingText 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes loadingText {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        /* Optimize image loading */
+        .preloader-logo {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+
+        /* 3D Game Specific Styles */
+        .game-3d-scene {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+            position: relative;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* Care and Quick Action Buttons */
+        .care-btn, .quick-action-btn {
+            border-radius: 12px !important;
+            padding: 12px 8px !important;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .care-btn::before, .quick-action-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .care-btn:active::before, .quick-action-btn:active::before {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .quick-action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .quick-action-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* Game Control Buttons */
+        .game-controls button {
+            transition: all 0.3s ease;
+            font-weight: 600;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        
+        .game-controls button:hover {
+            transform: scale(1.05);
+        }
+        
+        .game-controls button:active {
+            transform: scale(0.95);
+        }
+        
+        /* Floating Tip Animation */
+        .floating-tip {
+            animation: tipFloat 2s ease-in-out;
+        }
+        
+        @keyframes tipFloat {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+            10% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+            90% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -60%) scale(0.8); }
+        }
+        
+        /* Tutorial Overlay */
+        .tutorial-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .tutorial-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            animation: slideUp 0.5s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .tutorial-step {
+            text-align: center;
+        }
+        
+        .tutorial-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Progress Indicator */
+        .progress-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            transition: all 0.3s ease;
+        }
+        
+        .progress-dot.active {
+            background: #0d6efd;
+            transform: scale(1.3);
+        }
+        
+        /* Food Item Hover Effect */
+        .food-item {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent !important;
+        }
+        
+        .food-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            border-color: #0d6efd !important;
+            box-shadow: 0 6px 20px rgba(13, 110, 253, 0.3) !important;
+        }
+        
+        .food-item.recommended {
+            border-color: #198754 !important;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(25, 135, 84, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(25, 135, 84, 0); }
+        }
+        
+        #game3DCanvas {
+            cursor: pointer;
+            touch-action: none;
+        }
+        
+        .interaction-hint {
+            animation: hintPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes hintPulse {
+            0%, 100% { opacity: 0.7; transform: translateX(-50%) translateY(0); }
+            50% { opacity: 1; transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        .scene-info {
+            font-size: 0.75rem;
+            min-width: 80px;
+        }
+        
+        .tiger-container {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .tiger-sprite {
+            font-size: 120px;
+            animation: tigerIdle 3s ease-in-out infinite;
+            transition: all 0.5s ease;
+        }
+
+        .tiger-mood {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 30px;
+            animation: moodBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes tigerIdle {
+            0%, 100% { transform: scale(1) rotate(-2deg); }
+            50% { transform: scale(1.05) rotate(2deg); }
+        }
+
+        @keyframes moodBounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hover-lift {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .meat-item {
+            transition: all 0.3s ease;
+        }
+
+        .meat-item:hover {
+            border-color: #ffc107 !important;
+            background-color: #fff8e1 !important;
+        }
+
+        .buy-meat-btn {
+            transition: all 0.3s ease;
+        }
+
+        .buy-meat-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Mobile Compact Layout */
+        @media (max-width: 768px) {
+            .section-space-y {
+                padding: 1rem 0 !important;
+            }
+            
+            .py-3 {
+                padding-top: 0.75rem !important;
+                padding-bottom: 0.75rem !important;
+            }
+            
+            .container {
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+            }
+            
+            /* Compact meat shop items */
+            .meat-item {
+                min-height: 55px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .meat-item .btn {
+                margin-top: 2px !important;
+                font-size: 0.7rem !important;
+                padding: 2px 4px !important;
+                border-radius: 3px !important;
+            }
+            
+            .progress {
+                margin-top: 2px !important;
+            }
+            
+            /* Keep tiger display normal size */
+            .tiger-sprite {
+                font-size: 4rem !important;
+            }
+            
+            .tiger-mood {
+                font-size: 1.5rem !important;
+            }
+        }
+
+
+        /* Feeding Animation */
+        @keyframes feeding {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .feeding {
+            animation: feeding 0.5s ease-in-out;
+        }
+
+        /* Notification Styles */
+        .game-notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 10000;
+            animation: notificationPop 2s ease-in-out;
+        }
+
+        @keyframes notificationPop {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+            20% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+            80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+        }
+
+        /* Level up animation */
+        @keyframes levelUp {
+            0% { transform: scale(1) rotate(0deg); filter: brightness(1); }
+            25% { transform: scale(1.2) rotate(5deg); filter: brightness(1.5); }
+            50% { transform: scale(1.3) rotate(-5deg); filter: brightness(2); }
+            75% { transform: scale(1.1) rotate(3deg); filter: brightness(1.5); }
+            100% { transform: scale(1) rotate(0deg); filter: brightness(1); }
+        }
+
+        .level-up {
+            animation: levelUp 1s ease-in-out;
+        }
+
+        /* Hunting Animation */
+        @keyframes hunting {
+            0% { transform: translateX(0) rotate(0deg); }
+            25% { transform: translateX(-20px) rotate(-10deg); }
+            50% { transform: translateX(-40px) rotate(-15deg); opacity: 0.7; }
+            75% { transform: translateX(-20px) rotate(-5deg); opacity: 0.9; }
+            100% { transform: translateX(0) rotate(0deg); opacity: 1; }
+        }
+
+        .hunting {
+            animation: hunting 2s ease-in-out;
+        }
+
+        /* Hunt success animation */
+        @keyframes huntSuccess {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); filter: brightness(1.5) hue-rotate(60deg); }
+            100% { transform: scale(1); filter: brightness(1); }
+        }
+
+        .hunt-success {
+            animation: huntSuccess 0.8s ease-in-out;
+        }
+
+        /* Prey animation */
+        @keyframes preyAppear {
+            0% { opacity: 0; transform: translateY(-30px) scale(0.5); }
+            50% { opacity: 1; transform: translateY(-15px) scale(1.2); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .prey-appear {
+            animation: preyAppear 1s ease-out;
+        }
+
+        /* Hunting status indicator */
+        .hunting-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #28a745;
+            animation: huntingPulse 1.5s ease-in-out infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes huntingPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+    </style>
+
+    <!-- 3D Game Engine & Logic -->
+    <script>
+        // ===== 3D Game Engine =====
+        class Game3DEngine {
+            constructor() {
+                this.scene = null;
+                this.camera = null;
+                this.renderer = null;
+                this.tiger = null;
+                this.environment = [];
+                this.particles = [];
+                this.clock = new THREE.Clock();
+                this.timeOfDay = 0; // 0-24 hours
+                this.weather = 'sunny';
+                this.isInteracting = false;
+                this.init();
+            }
+
+            init() {
+                this.setupScene();
+                this.setupCamera();
+                this.setupRenderer();
+                this.setupLights();
+                this.createEnvironment();
+                this.createTiger();
+                this.setupInteraction();
+                this.animate();
+            }
+
+            setupScene() {
+                this.scene = new THREE.Scene();
+                // Sky gradient background
+                this.scene.background = new THREE.Color(0x87CEEB);
+                this.scene.fog = new THREE.Fog(0x98D8C8, 10, 50);
+            }
+
+            setupCamera() {
+                const container = document.getElementById('game3DContainer');
+                this.camera = new THREE.PerspectiveCamera(
+                    60,
+                    container.clientWidth / container.clientHeight,
+                    0.1,
+                    1000
+                );
+                this.camera.position.set(0, 3, 8);
+                this.camera.lookAt(0, 1, 0);
+                
+                // Camera animation targets
+                this.cameraTarget = new THREE.Vector3(0, 3, 8);
+                this.cameraLookAt = new THREE.Vector3(0, 1, 0);
+                this.cameraMode = 'normal'; // normal, close, top, side
+            }
+            
+            setCameraMode(mode) {
+                this.cameraMode = mode;
+                switch(mode) {
+                    case 'normal':
+                        this.cameraTarget.set(0, 3, 8);
+                        this.cameraLookAt.set(0, 1, 0);
+                        break;
+                    case 'close':
+                        this.cameraTarget.set(0, 2.5, 4);
+                        this.cameraLookAt.set(0, 1.2, 0);
+                        break;
+                    case 'top':
+                        this.cameraTarget.set(0, 8, 2);
+                        this.cameraLookAt.set(0, 0, 0);
+                        break;
+                    case 'side':
+                        this.cameraTarget.set(6, 2.5, 0);
+                        this.cameraLookAt.set(0, 1, 0);
+                        break;
+                }
+            }
+            
+            updateCamera() {
+                // Smooth camera transition (lerp)
+                this.camera.position.lerp(this.cameraTarget, 0.05);
+                
+                // Smooth look-at transition
+                const targetDir = this.cameraLookAt.clone().sub(this.camera.position).normalize();
+                const currentDir = new THREE.Vector3(0, 0, -1).applyQuaternion(this.camera.quaternion);
+                const newDir = currentDir.lerp(targetDir, 0.05);
+                this.camera.lookAt(this.camera.position.clone().add(newDir));
+                
+                // Gentle camera sway for dynamism
+                const time = this.clock.getElapsedTime();
+                if (this.cameraMode === 'normal') {
+                    this.camera.position.x += Math.sin(time * 0.3) * 0.003;
+                    this.camera.position.y += Math.cos(time * 0.2) * 0.003;
+                }
+            }
+
+            setupRenderer() {
+                const canvas = document.getElementById('game3DCanvas');
+                this.renderer = new THREE.WebGLRenderer({ 
+                    canvas: canvas, 
+                    antialias: true, 
+                    alpha: true 
+                });
+                this.renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.renderer.shadowMap.enabled = true;
+                this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            }
+
+            setupLights() {
+                // Ambient light
+                const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+                this.scene.add(ambientLight);
+
+                // Directional light (sun)
+                this.sunLight = new THREE.DirectionalLight(0xffffff, 0.8);
+                this.sunLight.position.set(5, 10, 5);
+                this.sunLight.castShadow = true;
+                this.sunLight.shadow.camera.left = -10;
+                this.sunLight.shadow.camera.right = 10;
+                this.sunLight.shadow.camera.top = 10;
+                this.sunLight.shadow.camera.bottom = -10;
+                this.scene.add(this.sunLight);
+
+                // Point light for tiger
+                this.tigerLight = new THREE.PointLight(0xffaa00, 0.5, 10);
+                this.tigerLight.position.set(0, 2, 0);
+                this.scene.add(this.tigerLight);
+            }
+
+            createEnvironment() {
+                // Ground plane
+                const groundGeometry = new THREE.PlaneGeometry(20, 20);
+                const groundMaterial = new THREE.MeshStandardMaterial({ 
+                    color: 0x3a9d23,
+                    roughness: 0.8
+                });
+                const ground = new THREE.Mesh(groundGeometry, groundMaterial);
+                ground.rotation.x = -Math.PI / 2;
+                ground.receiveShadow = true;
+                this.scene.add(ground);
+                this.environment.push(ground);
+
+                // Trees (simple cylinders with cones)
+                this.createTree(-5, 0, -3);
+                this.createTree(6, 0, -4);
+                this.createTree(-7, 0, 2);
+                this.createTree(4, 0, 3);
+
+                // Rocks
+                this.createRock(-3, 0, 4);
+                this.createRock(5, 0, -2);
+            }
+
+            createTree(x, y, z) {
+                const trunkGeometry = new THREE.CylinderGeometry(0.2, 0.3, 2, 8);
+                const trunkMaterial = new THREE.MeshStandardMaterial({ color: 0x8B4513 });
+                const trunk = new THREE.Mesh(trunkGeometry, trunkMaterial);
+                trunk.position.set(x, y + 1, z);
+                trunk.castShadow = true;
+                this.scene.add(trunk);
+                this.environment.push(trunk);
+
+                const leavesGeometry = new THREE.ConeGeometry(1, 2, 8);
+                const leavesMaterial = new THREE.MeshStandardMaterial({ color: 0x228B22 });
+                const leaves = new THREE.Mesh(leavesGeometry, leavesMaterial);
+                leaves.position.set(x, y + 3, z);
+                leaves.castShadow = true;
+                this.scene.add(leaves);
+                this.environment.push(leaves);
+            }
+
+            createRock(x, y, z) {
+                const rockGeometry = new THREE.DodecahedronGeometry(0.5);
+                const rockMaterial = new THREE.MeshStandardMaterial({ 
+                    color: 0x808080,
+                    roughness: 1
+                });
+                const rock = new THREE.Mesh(rockGeometry, rockMaterial);
+                rock.position.set(x, y + 0.5, z);
+                rock.castShadow = true;
+                this.scene.add(rock);
+                this.environment.push(rock);
+            }
+
+            createTiger() {
+                // Tiger body (for now using primitives, will be replaced with sprite/image)
+                const tigerGroup = new THREE.Group();
+
+                // Create sprite using tiger image
+                const textureLoader = new THREE.TextureLoader();
+                textureLoader.load(
+                    'memes/01_Royal_Welcome.png',
+                    (texture) => {
+                        const spriteMaterial = new THREE.SpriteMaterial({ 
+                            map: texture,
+                            transparent: true
+                        });
+                        const sprite = new THREE.Sprite(spriteMaterial);
+                        sprite.scale.set(2, 2, 1);
+                        tigerGroup.add(sprite);
+                        this.tigerSprite = sprite;
+                    },
+                    undefined,
+                    () => {
+                        // Fallback to geometric tiger
+                        console.log('Using fallback geometric tiger');
+                        this.createGeometricTiger(tigerGroup);
+                    }
+                );
+
+                tigerGroup.position.set(0, 1, 0);
+                tigerGroup.castShadow = true;
+                this.scene.add(tigerGroup);
+                this.tiger = tigerGroup;
+
+                // Idle animation
+                this.tigerIdleAnimation();
+            }
+
+            createGeometricTiger(group) {
+                // Body
+                const bodyGeometry = new THREE.BoxGeometry(1.5, 0.8, 0.8);
+                const bodyMaterial = new THREE.MeshStandardMaterial({ color: 0xFFA500 });
+                const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
+                body.castShadow = true;
+                group.add(body);
+
+                // Head
+                const headGeometry = new THREE.SphereGeometry(0.5, 16, 16);
+                const head = new THREE.Mesh(headGeometry, bodyMaterial);
+                head.position.set(0.8, 0.3, 0);
+                head.castShadow = true;
+                group.add(head);
+
+                // Ears
+                const earGeometry = new THREE.ConeGeometry(0.15, 0.3, 8);
+                const leftEar = new THREE.Mesh(earGeometry, bodyMaterial);
+                leftEar.position.set(0.6, 0.7, 0.2);
+                group.add(leftEar);
+                const rightEar = new THREE.Mesh(earGeometry, bodyMaterial);
+                rightEar.position.set(0.6, 0.7, -0.2);
+                group.add(rightEar);
+
+                // Legs
+                const legGeometry = new THREE.CylinderGeometry(0.15, 0.15, 0.6, 8);
+                const positions = [[0.4, -0.7, 0.3], [0.4, -0.7, -0.3], [-0.4, -0.7, 0.3], [-0.4, -0.7, -0.3]];
+                positions.forEach(pos => {
+                    const leg = new THREE.Mesh(legGeometry, bodyMaterial);
+                    leg.position.set(...pos);
+                    leg.castShadow = true;
+                    group.add(leg);
+                });
+            }
+
+            tigerIdleAnimation() {
+                if (!this.tiger) return;
+                const time = this.clock.getElapsedTime();
+                
+                // Get current activity from game state
+                const activity = window.gameState ? window.gameState.activity : 'idle';
+                
+                switch(activity) {
+                    case 'eating':
+                        this.animateEating(time);
+                        break;
+                    case 'drinking':
+                        this.animateDrinking(time);
+                        break;
+                    case 'playing':
+                        this.animatePlaying(time);
+                        break;
+                    case 'sleeping':
+                        this.animateSleeping(time);
+                        break;
+                    case 'bathing':
+                        this.animateBathing(time);
+                        break;
+                    case 'hunting':
+                        this.animateHunting(time);
+                        break;
+                    default:
+                        this.animateIdle(time);
+                }
+            }
+
+            animateIdle(time) {
+                // Gentle breathing and swaying
+                this.tiger.position.y = 1 + Math.sin(time * 2) * 0.08;
+                this.tiger.rotation.y = Math.sin(time * 0.5) * 0.08;
+                
+                // Occasional head movement
+                if (this.tigerSprite) {
+                    this.tigerSprite.rotation = Math.sin(time * 0.3) * 0.05;
+                }
+            }
+
+            animateEating(time) {
+                // Bobbing head motion while eating
+                this.tiger.position.y = 0.8 + Math.sin(time * 4) * 0.15;
+                this.tiger.rotation.x = Math.sin(time * 4) * 0.2;
+                
+                // Slight side-to-side motion
+                this.tiger.position.x = Math.sin(time * 2) * 0.1;
+            }
+
+            animateDrinking(time) {
+                // Lower position for drinking
+                this.tiger.position.y = 0.7 + Math.sin(time * 3) * 0.1;
+                this.tiger.rotation.x = -0.3 + Math.sin(time * 3) * 0.1;
+                
+                // Create water ripple particles
+                if (Math.random() < 0.1) {
+                    this.createWaterRipple();
+                }
+            }
+
+            animatePlaying(time) {
+                // Energetic bouncing
+                this.tiger.position.y = 1.2 + Math.abs(Math.sin(time * 5)) * 0.4;
+                this.tiger.rotation.y = time * 2;
+                
+                // Scale variation for excitement
+                const scale = 1 + Math.sin(time * 4) * 0.1;
+                this.tiger.scale.set(scale, scale, scale);
+            }
+
+            animateSleeping(time) {
+                // Resting position
+                this.tiger.position.y = 0.5 + Math.sin(time * 1) * 0.03;
+                this.tiger.rotation.x = 0.2;
+                
+                // Gentle breathing
+                const breathScale = 1 + Math.sin(time * 2) * 0.02;
+                this.tiger.scale.set(breathScale, breathScale, breathScale);
+                
+                // Create sleep particles (z's)
+                if (Math.random() < 0.02) {
+                    this.createSleepParticle();
+                }
+            }
+
+            animateBathing(time) {
+                // Shaking motion
+                this.tiger.position.y = 1 + Math.sin(time * 6) * 0.2;
+                this.tiger.rotation.z = Math.sin(time * 8) * 0.3;
+                this.tiger.rotation.y = Math.sin(time * 4) * 0.5;
+                
+                // Create water splash particles
+                if (Math.random() < 0.15) {
+                    this.createWaterSplash();
+                }
+            }
+
+            animateHunting(time) {
+                // Crouching and stalking motion
+                this.tiger.position.y = 0.7 + Math.sin(time * 3) * 0.1;
+                this.tiger.position.x = Math.sin(time * 1.5) * 0.3;
+                this.tiger.position.z = Math.cos(time * 1.5) * 0.3;
+                this.tiger.rotation.y = time * 0.5;
+            }
+
+            setupInteraction() {
+                const canvas = document.getElementById('game3DCanvas');
+                
+                // Mouse/Touch interaction
+                canvas.addEventListener('click', (event) => this.onCanvasClick(event));
+                canvas.addEventListener('touchstart', (event) => this.onCanvasClick(event));
+                
+                // Resize handler
+                window.addEventListener('resize', () => this.onWindowResize());
+            }
+
+            onCanvasClick(event) {
+                // Tiger interaction - pet the cat
+                if (this.tiger) {
+                    this.petTiger();
+                }
+            }
+
+            petTiger() {
+                if (this.isInteracting) return;
+                this.isInteracting = true;
+
+                // Happy animation
+                const originalY = this.tiger.position.y;
+                const duration = 500;
+                const startTime = Date.now();
+
+                const animate = () => {
+                    const elapsed = Date.now() - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    this.tiger.position.y = originalY + Math.sin(progress * Math.PI) * 0.5;
+                    this.tiger.rotation.y += 0.1;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        this.tiger.position.y = originalY;
+                        this.isInteracting = false;
+                    }
+                };
+
+                animate();
+
+                // Create heart particles
+                this.createHeartParticles();
+
+                // Trigger game event
+                if (window.gameManager) {
+                    window.gameManager.onTigerPet();
+                }
+            }
+
+            createHeartParticles() {
+                for (let i = 0; i < 5; i++) {
+                    const heartGeometry = new THREE.SphereGeometry(0.1, 8, 8);
+                    const heartMaterial = new THREE.MeshBasicMaterial({ color: 0xFF69B4 });
+                    const heart = new THREE.Mesh(heartGeometry, heartMaterial);
+                    
+                    heart.position.copy(this.tiger.position);
+                    heart.position.x += (Math.random() - 0.5) * 2;
+                    heart.position.z += (Math.random() - 0.5) * 2;
+                    
+                    this.scene.add(heart);
+                    this.particles.push({ mesh: heart, velocity: new THREE.Vector3(0, 0.05, 0), life: 1 });
+                }
+            }
+
+            updateParticles() {
+                for (let i = this.particles.length - 1; i >= 0; i--) {
+                    const particle = this.particles[i];
+                    
+                    if (particle.mesh) {
+                        // Old format particles (level-up)
+                        particle.mesh.position.add(particle.velocity);
+                        particle.life -= 0.01;
+                        particle.mesh.material.opacity = particle.life;
+                        
+                        if (particle.life <= 0) {
+                            this.scene.remove(particle.mesh);
+                            this.particles.splice(i, 1);
+                        }
+                    } else if (particle.userData) {
+                        // New format particles
+                        const data = particle.userData;
+                        data.life--;
+                        const lifeRatio = data.life / data.maxLife;
+                        
+                        // Update based on particle type
+                        switch(data.type) {
+                            case 'heart':
+                            case 'splash':
+                            case 'food':
+                                // Standard projectile motion
+                                particle.position.add(data.velocity);
+                                data.velocity.y -= 0.002; // Gravity
+                                if (particle.material.opacity !== undefined) {
+                                    particle.material.opacity = lifeRatio;
+                                }
+                                break;
+                                
+                            case 'ripple':
+                                // Expand ripple
+                                const scale = data.initialScale + (1 - lifeRatio) * 3;
+                                particle.scale.set(scale, scale, scale);
+                                particle.material.opacity = lifeRatio * 0.7;
+                                break;
+                                
+                            case 'sleep':
+                                // Float upward with drift
+                                particle.position.add(data.velocity);
+                                particle.position.x += Math.sin(data.life * 0.1) * 0.01;
+                                particle.material.opacity = lifeRatio * 0.8;
+                                particle.scale.set(
+                                    0.3 + (1 - lifeRatio) * 0.2,
+                                    0.3 + (1 - lifeRatio) * 0.2,
+                                    1
+                                );
+                                break;
+                                
+                            case 'sparkle':
+                                // Sparkle with rotation
+                                particle.position.add(data.velocity);
+                                data.velocity.y -= 0.003;
+                                particle.rotation.x += data.rotation.x;
+                                particle.rotation.y += data.rotation.y;
+                                particle.rotation.z += data.rotation.z;
+                                particle.material.opacity = lifeRatio;
+                                
+                                // Pulse effect
+                                const pulse = 1 + Math.sin(data.life * 0.2) * 0.3;
+                                particle.scale.set(pulse, pulse, pulse);
+                                break;
+                                
+                            case 'rain':
+                                // Rain falling
+                                particle.position.add(data.velocity);
+                                if (particle.position.y < 0.1) {
+                                    data.life = 0; // Remove when hitting ground
+                                }
+                                break;
+                                
+                            case 'snow':
+                                // Snowflake drifting
+                                particle.position.add(data.velocity);
+                                particle.position.x += Math.sin(data.life * 0.05) * 0.01;
+                                particle.rotation.x += data.rotation.x;
+                                particle.rotation.y += data.rotation.y;
+                                particle.rotation.z += data.rotation.z;
+                                if (particle.position.y < 0.1) {
+                                    data.life = 0; // Remove when hitting ground
+                                }
+                                break;
+                        }
+                        
+                        if (data.life <= 0) {
+                            this.scene.remove(particle);
+                            this.particles.splice(i, 1);
+                        }
+                    }
+                }
+            }
+
+            updateTimeOfDay() {
+                // Simulate day/night cycle (1 real second = 1 game hour)
+                this.timeOfDay = (this.clock.getElapsedTime() / 60) % 24;
+                
+                // Update lighting
+                if (this.timeOfDay < 6 || this.timeOfDay > 20) {
+                    // Night
+                    this.scene.background = new THREE.Color(0x1a1a2e);
+                    this.sunLight.intensity = 0.2;
+                } else if (this.timeOfDay < 12) {
+                    // Morning
+                    this.scene.background = new THREE.Color(0x87CEEB);
+                    this.sunLight.intensity = 0.8;
+                } else if (this.timeOfDay < 18) {
+                    // Afternoon
+                    this.scene.background = new THREE.Color(0x87CEEB);
+                    this.sunLight.intensity = 0.7;
+                } else {
+                    // Evening
+                    this.scene.background = new THREE.Color(0xFF6B35);
+                    this.sunLight.intensity = 0.4;
+                }
+
+                // Update UI
+                const hour = Math.floor(this.timeOfDay);
+                const timeDisplay = hour < 12 ? 'Morning' : hour < 18 ? 'Day' : 'Evening';
+                document.getElementById('timeOfDay').textContent = timeDisplay;
+            }
+
+            onWindowResize() {
+                const container = document.getElementById('game3DContainer');
+                this.camera.aspect = container.clientWidth / container.clientHeight;
+                this.camera.updateProjectionMatrix();
+                this.renderer.setSize(container.clientWidth, container.clientHeight);
+            }
+
+            animate() {
+                requestAnimationFrame(() => this.animate());
+                
+                this.tigerIdleAnimation();
+                this.updateParticles();
+                this.updateTimeOfDay();
+                this.updateCamera();
+                this.createWeatherParticles();
+                
+                this.renderer.render(this.scene, this.camera);
+            }
+
+            feedTiger() {
+                if (!this.tiger) return;
+                
+                // Eating animation
+                const originalScale = this.tiger.scale.clone();
+                const duration = 800;
+                const startTime = Date.now();
+
+                const animate = () => {
+                    const elapsed = Date.now() - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    const scale = 1 + Math.sin(progress * Math.PI * 2) * 0.1;
+                    this.tiger.scale.set(scale, scale, scale);
+
+                    if (progress < 1) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        this.tiger.scale.copy(originalScale);
+                    }
+                };
+
+                animate();
+            }
+
+            levelUpEffect() {
+                if (!this.tiger || !this.tigerLight) return;
+                
+                // Flash effect
+                const originalIntensity = this.tigerLight.intensity;
+                this.tigerLight.intensity = 2;
+                this.tigerLight.color.setHex(0xFFD700);
+                
+                setTimeout(() => {
+                    this.tigerLight.intensity = originalIntensity;
+                    this.tigerLight.color.setHex(0xFFAA00);
+                }, 1000);
+
+                // Burst particles
+                for (let i = 0; i < 20; i++) {
+                    const particleGeometry = new THREE.SphereGeometry(0.1, 8, 8);
+                    const particleMaterial = new THREE.MeshBasicMaterial({ color: 0xFFD700 });
+                    const particle = new THREE.Mesh(particleGeometry, particleMaterial);
+                    
+                    particle.position.copy(this.tiger.position);
+                    
+                    const angle = (i / 20) * Math.PI * 2;
+                    const velocity = new THREE.Vector3(
+                        Math.cos(angle) * 0.1,
+                        0.15,
+                        Math.sin(angle) * 0.1
+                    );
+                    
+                    this.scene.add(particle);
+                    this.particles.push({ mesh: particle, velocity: velocity, life: 1.5 });
+                }
+            }
+
+            updateTigerTexture(imagePath) {
+                if (!this.tigerSprite) return;
+                
+                const textureLoader = new THREE.TextureLoader();
+                textureLoader.load(imagePath, (texture) => {
+                    this.tigerSprite.material.map = texture;
+                    this.tigerSprite.material.needsUpdate = true;
+                });
+            }
+
+            createWaterRipple() {
+                const geometry = new THREE.RingGeometry(0.1, 0.15, 16);
+                const material = new THREE.MeshBasicMaterial({ 
+                    color: 0x4da6ff, 
+                    transparent: true, 
+                    opacity: 0.7,
+                    side: THREE.DoubleSide
+                });
+                const ripple = new THREE.Mesh(geometry, material);
+                
+                ripple.position.set(
+                    this.tiger.position.x,
+                    0.1,
+                    this.tiger.position.z + 0.5
+                );
+                ripple.rotation.x = -Math.PI / 2;
+                
+                ripple.userData = {
+                    life: 30,
+                    maxLife: 30,
+                    type: 'ripple',
+                    initialScale: 0.1
+                };
+                
+                this.particles.push(ripple);
+                this.scene.add(ripple);
+            }
+
+            createWaterSplash() {
+                const splashCount = 3;
+                for (let i = 0; i < splashCount; i++) {
+                    const geometry = new THREE.SphereGeometry(0.05, 6, 6);
+                    const material = new THREE.MeshBasicMaterial({ 
+                        color: 0x66ccff,
+                        transparent: true,
+                        opacity: 0.8
+                    });
+                    const splash = new THREE.Mesh(geometry, material);
+                    
+                    splash.position.copy(this.tiger.position);
+                    splash.position.x += (Math.random() - 0.5) * 0.3;
+                    splash.position.y += Math.random() * 0.5;
+                    splash.position.z += (Math.random() - 0.5) * 0.3;
+                    
+                    splash.userData = {
+                        velocity: new THREE.Vector3(
+                            (Math.random() - 0.5) * 0.05,
+                            Math.random() * 0.08 + 0.02,
+                            (Math.random() - 0.5) * 0.05
+                        ),
+                        life: 40,
+                        maxLife: 40,
+                        type: 'splash'
+                    };
+                    
+                    this.particles.push(splash);
+                    this.scene.add(splash);
+                }
+            }
+
+            createSleepParticle() {
+                // Create "Z" shape using canvas texture
+                const canvas = document.createElement('canvas');
+                canvas.width = 64;
+                canvas.height = 64;
+                const ctx = canvas.getContext('2d');
+                
+                ctx.fillStyle = '#ffffff';
+                ctx.font = 'bold 48px Arial';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('Z', 32, 32);
+                
+                const texture = new THREE.CanvasTexture(canvas);
+                const material = new THREE.SpriteMaterial({ 
+                    map: texture,
+                    transparent: true,
+                    opacity: 0.8
+                });
+                const sprite = new THREE.Sprite(material);
+                sprite.scale.set(0.3, 0.3, 1);
+                
+                sprite.position.copy(this.tiger.position);
+                sprite.position.x += (Math.random() - 0.5) * 0.3;
+                sprite.position.y += 1.5;
+                sprite.position.z += (Math.random() - 0.5) * 0.3;
+                
+                sprite.userData = {
+                    velocity: new THREE.Vector3(
+                        (Math.random() - 0.5) * 0.01,
+                        0.02,
+                        0
+                    ),
+                    life: 80,
+                    maxLife: 80,
+                    type: 'sleep'
+                };
+                
+                this.particles.push(sprite);
+                this.scene.add(sprite);
+            }
+
+            createFoodParticle(color = 0xffa500) {
+                const geometry = new THREE.SphereGeometry(0.08, 8, 8);
+                const material = new THREE.MeshBasicMaterial({ color: color });
+                const particle = new THREE.Mesh(geometry, material);
+                
+                particle.position.copy(this.tiger.position);
+                particle.position.y += 0.5;
+                particle.position.x += (Math.random() - 0.5) * 0.2;
+                
+                particle.userData = {
+                    velocity: new THREE.Vector3(
+                        (Math.random() - 0.5) * 0.03,
+                        Math.random() * 0.04 + 0.02,
+                        (Math.random() - 0.5) * 0.03
+                    ),
+                    life: 40,
+                    maxLife: 40,
+                    type: 'food'
+                };
+                
+                this.particles.push(particle);
+                this.scene.add(particle);
+            }
+
+            createSparkleParticles(count = 10) {
+                for (let i = 0; i < count; i++) {
+                    const geometry = new THREE.OctahedronGeometry(0.05, 0);
+                    const material = new THREE.MeshBasicMaterial({ 
+                        color: 0xffff00,
+                        transparent: true,
+                        opacity: 1
+                    });
+                    const sparkle = new THREE.Mesh(geometry, material);
+                    
+                    sparkle.position.copy(this.tiger.position);
+                    sparkle.position.x += (Math.random() - 0.5) * 1;
+                    sparkle.position.y += Math.random() * 1.5;
+                    sparkle.position.z += (Math.random() - 0.5) * 1;
+                    
+                    sparkle.userData = {
+                        velocity: new THREE.Vector3(
+                            (Math.random() - 0.5) * 0.04,
+                            Math.random() * 0.06,
+                            (Math.random() - 0.5) * 0.04
+                        ),
+                        rotation: new THREE.Vector3(
+                            Math.random() * 0.2,
+                            Math.random() * 0.2,
+                            Math.random() * 0.2
+                        ),
+                        life: 50,
+                        maxLife: 50,
+                        type: 'sparkle'
+                    };
+                    
+                    this.particles.push(sparkle);
+                    this.scene.add(sparkle);
+                }
+            }
+
+            // Weather Effects
+            createWeatherParticles() {
+                if (!window.gameState) return;
+                const weather = window.gameState.weather || 'sunny';
+                
+                if (weather === 'rainy' && Math.random() < 0.3) {
+                    this.createRainDrop();
+                } else if (weather === 'snowy' && Math.random() < 0.2) {
+                    this.createSnowflake();
+                }
+            }
+
+            createRainDrop() {
+                const geometry = new THREE.CylinderGeometry(0.01, 0.01, 0.3, 4);
+                const material = new THREE.MeshBasicMaterial({ 
+                    color: 0x4da6ff,
+                    transparent: true,
+                    opacity: 0.6
+                });
+                const rain = new THREE.Mesh(geometry, material);
+                
+                rain.position.set(
+                    (Math.random() - 0.5) * 20,
+                    10 + Math.random() * 5,
+                    (Math.random() - 0.5) * 20
+                );
+                rain.rotation.x = -Math.PI / 2;
+                
+                rain.userData = {
+                    velocity: new THREE.Vector3(0, -0.3, 0),
+                    life: 100,
+                    maxLife: 100,
+                    type: 'rain'
+                };
+                
+                this.particles.push(rain);
+                this.scene.add(rain);
+            }
+
+            createSnowflake() {
+                const geometry = new THREE.OctahedronGeometry(0.05, 0);
+                const material = new THREE.MeshBasicMaterial({ 
+                    color: 0xffffff,
+                    transparent: true,
+                    opacity: 0.9
+                });
+                const snow = new THREE.Mesh(geometry, material);
+                
+                snow.position.set(
+                    (Math.random() - 0.5) * 20,
+                    10 + Math.random() * 5,
+                    (Math.random() - 0.5) * 20
+                );
+                
+                snow.userData = {
+                    velocity: new THREE.Vector3(
+                        (Math.random() - 0.5) * 0.01,
+                        -0.05,
+                        (Math.random() - 0.5) * 0.01
+                    ),
+                    rotation: new THREE.Vector3(
+                        Math.random() * 0.1,
+                        Math.random() * 0.1,
+                        Math.random() * 0.1
+                    ),
+                    life: 200,
+                    maxLife: 200,
+                    type: 'snow'
+                };
+                
+                this.particles.push(snow);
+                this.scene.add(snow);
+            }
+
+            setWeather(weather) {
+                if (!window.gameState) return;
+                window.gameState.weather = weather;
+                
+                // Update scene based on weather
+                switch(weather) {
+                    case 'sunny':
+                        this.scene.fog = new THREE.Fog(0x98D8C8, 10, 50);
+                        this.sunLight.intensity = 1.0;
+                        break;
+                    case 'rainy':
+                        this.scene.fog = new THREE.Fog(0x708090, 5, 30);
+                        this.sunLight.intensity = 0.6;
+                        this.scene.background = new THREE.Color(0x778899);
+                        break;
+                    case 'snowy':
+                        this.scene.fog = new THREE.Fog(0xdcdcdc, 5, 35);
+                        this.sunLight.intensity = 0.8;
+                        this.scene.background = new THREE.Color(0xe6f3ff);
+                        break;
+                    case 'cloudy':
+                        this.scene.fog = new THREE.Fog(0x9fb6cd, 8, 40);
+                        this.sunLight.intensity = 0.7;
+                        this.scene.background = new THREE.Color(0x87ceeb);
+                        break;
+                }
+            }
+        }
+
+        // ===== Game State & Manager =====
+        let gameState = {
+            balance: 100000000000, // Start with 100B CROTOPIA for epic progression
+            hunger: 80,              // 饥饿值 (0-100)
+            thirst: 50,              // 口渴值 (0-100) - 新增
+            energy: 100,             // 精力值 (0-100) - 新增
+            happiness: 80,           // 快乐值 (0-100) - 新增
+            cleanliness: 100,        // 清洁度 (0-100) - 新增
+            experience: 0,
+            level: 0,
+            strength: 10,
+            speed: 15,
+            intelligence: 12,
+            agility: 10,             // 敏捷 - 新增
+            charisma: 15,            // 魅力 - 新增
+            totalHunted: 0,
+            huntCount: 0,
+            lastHuntTime: 0,
+            isHunting: false,
+            totalFed: 0,
+            totalPetted: 0,          // 总抚摸次数 - 新增
+            totalBathed: 0,          // 总洗澡次数 - 新增
+            totalPlayed: 0,          // 总玩耍次数 - 新增
+            achievements: [],
+            lastSaveTime: 0,
+            affection: 50,           // 亲密度
+            mood: 'happy',           // 心情状态 - 新增
+            activity: 'idle',        // 当前活动 - 新增
+            weather: 'sunny',        // 天气 - 新增
+            timeOfDay: 'day'         // 时段 - 新增
+        };
+
+        // ===== Game Manager =====
+        class GameManager {
+            constructor() {
+                this.engine3D = null;
+                this.init();
+            }
+
+            init() {
+                // Initialize 3D engine
+                this.engine3D = new Game3DEngine();
+                window.gameManager = this;
+                
+                // Load saved game
+                this.loadGame();
+                
+                // Setup UI
+                this.setupUI();
+                this.updateDisplay();
+                
+                // Start game loops
+                this.startHungerSystem();
+                this.startAutoSave();
+            }
+
+            onTigerPet() {
+                // Increase affection
+                gameState.affection = Math.min(100, gameState.affection + 2);
+                
+                // Small balance bonus
+                const bonus = 10000000; // 10M
+                gameState.balance += bonus;
+                
+                this.updateDisplay();
+                showNotification(`❤️ +2 Affection! Bonus: ${formatNumber(bonus)} CROTOPIA`);
+            }
+
+            feedTiger(price, hungerRestore, expGain) {
+                if (gameState.balance < price) {
+                    showNotification("❌ Not enough CROTOPIA tokens!");
+                    return;
+                }
+
+                // Deduct cost
+                gameState.balance -= price;
+                
+                // Get current level before feeding
+                const oldLevel = getCurrentTigerLevel();
+                
+                // Feed tiger
+                gameState.hunger = Math.max(0, gameState.hunger - hungerRestore);
+                gameState.experience += expGain;
+                gameState.totalFed++;
+                
+                // Increase stats slightly
+                gameState.strength += Math.floor(expGain / 10);
+                gameState.speed += Math.floor(expGain / 12);
+                gameState.intelligence += Math.floor(expGain / 8);
+                
+                // Cap stats at 100
+                gameState.strength = Math.min(100, gameState.strength);
+                gameState.speed = Math.min(100, gameState.speed);
+                gameState.intelligence = Math.min(100, gameState.intelligence);
+                
+                // Check for level up
+                const newLevel = getCurrentTigerLevel();
+                const leveledUp = oldLevel.name !== newLevel.name;
+                
+                // Update display
+                this.updateDisplay();
+                
+                // Set eating activity and create food particles
+                gameState.activity = 'eating';
+                if (this.engine3D) {
+                    this.engine3D.feedTiger();
+                    this.engine3D.createFoodParticle(0xffa500);
+                    
+                    if (leveledUp) {
+                        this.engine3D.levelUpEffect();
+                        this.engine3D.createSparkleParticles(15);
+                        this.engine3D.updateTigerTexture(newLevel.image || 'memes/01_Royal_Welcome.png');
+                        showNotification(`🎉 Level Up! Your cat evolved to ${newLevel.name}!`);
+                    }
+                }
+                
+                // Reset activity after 2 seconds
+                setTimeout(() => {
+                    gameState.activity = 'idle';
+                }, 2000);
+                
+                // Save game after purchase
+                this.saveGame();
+                
+                // Show notification
+                showNotification(`Fed your cat! +${expGain} XP`);
+                
+                // Add haptic feedback
+                if ('vibrate' in navigator) {
+                    navigator.vibrate(50);
+                }
+            }
+
+            setupUI() {
+                // Food buttons
+                document.querySelectorAll('.buy-meat-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const item = e.target.closest('.food-item');
+                        const price = parseInt(item.dataset.price);
+                        const hunger = parseInt(item.dataset.hunger);
+                        const exp = parseInt(item.dataset.exp);
+                        this.feedTiger(price, hunger, exp);
+                    });
+                });
+
+                // Pet Tiger Button (3D scene)
+                const petBtn = document.getElementById('petTigerBtn');
+                if (petBtn) {
+                    petBtn.addEventListener('click', () => {
+                        if (this.engine3D) {
+                            this.engine3D.petTiger();
+                        }
+                    });
+                }
+
+                // Quick Feed Button
+                const quickFeedBtn = document.getElementById('quickFeedBtn');
+                if (quickFeedBtn) {
+                    quickFeedBtn.addEventListener('click', () => {
+                        this.quickFeed();
+                    });
+                }
+
+                // Auto Feed Button
+                const autoFeedBtn = document.getElementById('autoFeedBtn');
+                if (autoFeedBtn) {
+                    autoFeedBtn.addEventListener('click', () => {
+                        this.toggleAutoFeed();
+                    });
+                }
+
+                // Max Feed Button
+                const maxFeedBtn = document.getElementById('maxFeedBtn');
+                if (maxFeedBtn) {
+                    maxFeedBtn.addEventListener('click', () => {
+                        this.maxFeed();
+                    });
+                }
+
+                // Collect All Button
+                const collectBtn = document.getElementById('collectAllBtn');
+                if (collectBtn) {
+                    collectBtn.addEventListener('click', () => {
+                        this.collectBonus();
+                    });
+                }
+
+                // Care buttons
+                const giveWaterBtn = document.getElementById('giveWaterBtn');
+                if (giveWaterBtn) {
+                    giveWaterBtn.addEventListener('click', () => this.giveWater());
+                }
+
+                const bathBtn = document.getElementById('bathBtn');
+                if (bathBtn) {
+                    bathBtn.addEventListener('click', () => this.giveBath());
+                }
+
+                const playBtn = document.getElementById('playBtn');
+                if (playBtn) {
+                    playBtn.addEventListener('click', () => this.playWithTiger());
+                }
+
+                const sleepBtn = document.getElementById('sleepBtn');
+                if (sleepBtn) {
+                    sleepBtn.addEventListener('click', () => this.letTigerSleep());
+                }
+
+                const autoCareBtn = document.getElementById('autoCareBtn');
+                if (autoCareBtn) {
+                    autoCareBtn.addEventListener('click', () => this.toggleAutoCare());
+                }
+
+                // Update recommended food
+                this.updateRecommendedFood();
+            }
+
+            // Water the cat
+            giveWater() {
+                if (gameState.thirst < 10) {
+                    showNotification("Cat is not thirsty!");
+                    return;
+                }
+
+                gameState.thirst = Math.max(0, gameState.thirst - 30);
+                gameState.happiness = Math.min(100, gameState.happiness + 5);
+                gameState.affection = Math.min(100, gameState.affection + 1);
+                
+                // Set drinking activity
+                gameState.activity = 'drinking';
+                
+                this.updateDisplay();
+                showFloatingTip("💧 Refreshing! +5 Happiness");
+                
+                // Reset activity after 3 seconds
+                setTimeout(() => {
+                    gameState.activity = 'idle';
+                }, 3000);
+                
+                if ('vibrate' in navigator) {
+                    navigator.vibrate(100);
+                }
+            }
+
+            // Give bath to tiger
+            giveBath() {
+                if (gameState.cleanliness > 80) {
+                    showNotification("Cat is already clean!");
+                    return;
+                }
+
+                gameState.cleanliness = 100;
+                gameState.happiness = Math.min(100, gameState.happiness + 10);
+                gameState.affection = Math.min(100, gameState.affection + 3);
+                gameState.charisma = Math.min(100, gameState.charisma + 2);
+                gameState.totalBathed++;
+                
+                // Set bathing activity
+                gameState.activity = 'bathing';
+                
+                this.updateDisplay();
+                showFloatingTip("🛁 Sparkling Clean! +10 Happiness");
+                
+                // Reset activity after 4 seconds
+                setTimeout(() => {
+                    gameState.activity = 'idle';
+                }, 4000);
+                
+                if ('vibrate' in navigator) {
+                    navigator.vibrate([100, 50, 100]);
+                }
+            }
+
+            // Play with tiger
+            playWithTiger() {
+                if (gameState.energy < 20) {
+                    showNotification("❌ Cat is too tired to play!");
+                    return;
+                }
+
+                gameState.energy = Math.max(0, gameState.energy - 15);
+                gameState.happiness = Math.min(100, gameState.happiness + 20);
+                gameState.affection = Math.min(100, gameState.affection + 5);
+                gameState.agility = Math.min(100, gameState.agility + 2);
+                gameState.speed = Math.min(100, gameState.speed + 1);
+                gameState.totalPlayed++;
+                
+                // Set playing activity
+                gameState.activity = 'playing';
+                
+                // Create sparkle particles
+                if (this.engine3D) {
+                    this.engine3D.createSparkleParticles(5);
+                }
+                
+                this.updateDisplay();
+                showFloatingTip("🎾 Fun Time! +20 Happiness");
+                
+                // Reset activity after 3 seconds
+                setTimeout(() => {
+                    gameState.activity = 'idle';
+                }, 3000);
+                
+                if ('vibrate' in navigator) {
+                    navigator.vibrate([50, 50, 50]);
+                }
+            }
+
+            // Let tiger sleep
+            letTigerSleep() {
+                if (gameState.energy > 90) {
+                    showNotification("Cat is not tired!");
+                    return;
+                }
+
+                gameState.energy = Math.min(100, gameState.energy + 40);
+                gameState.activity = 'sleeping';
+                
+                this.updateDisplay();
+                showFloatingTip("😴 Sleeping... +40 Energy");
+                
+                // Wake up after 5 seconds
+                setTimeout(() => {
+                    gameState.activity = 'idle';
+                    this.updateDisplay();
+                    showNotification("🌅 Cat woke up refreshed!");
+                }, 5000);
+            }
+
+            // Toggle auto care
+            toggleAutoCare() {
+                if (!this.autoCareInterval) {
+                    // Start auto care
+                    this.autoCareInterval = setInterval(() => {
+                        // Auto water if thirsty
+                        if (gameState.thirst > 60) {
+                            this.giveWater();
+                        }
+                        // Auto bath if dirty
+                        if (gameState.cleanliness < 40) {
+                            this.giveBath();
+                        }
+                        // Auto play if sad
+                        if (gameState.happiness < 50 && gameState.energy > 20) {
+                            this.playWithTiger();
+                        }
+                        // Auto sleep if tired
+                        if (gameState.energy < 30) {
+                            this.letTigerSleep();
+                        }
+                    }, 3000); // Every 3 seconds
+
+                    document.getElementById('autoCareBtn').classList.add('btn-warning');
+                    document.getElementById('autoCareBtn').classList.remove('btn-light');
+                    showNotification("🤖 Auto Care ON! (Every 3s)");
+                } else {
+                    // Stop auto care
+                    clearInterval(this.autoCareInterval);
+                    this.autoCareInterval = null;
+                    document.getElementById('autoCareBtn').classList.add('btn-light');
+                    document.getElementById('autoCareBtn').classList.remove('btn-warning');
+                    showNotification("🤖 Auto Care OFF");
+                }
+            }
+
+            quickFeed() {
+                // Find cheapest affordable food
+                const foods = [
+                    { name: 'chicken', price: 500000000, hunger: 10, exp: 2 },
+                    { name: 'fish', price: 800000000, hunger: 15, exp: 3 },
+                    { name: 'beef', price: 1500000000, hunger: 20, exp: 5 },
+                    { name: 'premium', price: 3000000000, hunger: 30, exp: 8 },
+                    { name: 'legendary', price: 6000000000, hunger: 50, exp: 15 }
+                ];
+
+                for (let food of foods) {
+                    if (gameState.balance >= food.price && gameState.hunger > 10) {
+                        this.feedTiger(food.price, food.hunger, food.exp);
+                        showFloatingTip(`Quick Fed! +${food.exp} XP`);
+                        return;
+                    }
+                }
+
+                showNotification("❌ Not enough balance or cat not hungry!");
+            }
+
+            toggleAutoFeed() {
+                if (!this.autoFeedInterval) {
+                    // Start auto feed
+                    this.autoFeedInterval = setInterval(() => {
+                        if (gameState.hunger > 50) {
+                            this.quickFeed();
+                        }
+                    }, 5000); // Every 5 seconds
+
+                    document.getElementById('autoFeedBtn').classList.add('btn-warning');
+                    document.getElementById('autoFeedBtn').classList.remove('btn-light');
+                    showNotification("🤖 Auto Feed ON! (Every 5s when hungry)");
+                } else {
+                    // Stop auto feed
+                    clearInterval(this.autoFeedInterval);
+                    this.autoFeedInterval = null;
+                    document.getElementById('autoFeedBtn').classList.add('btn-light');
+                    document.getElementById('autoFeedBtn').classList.remove('btn-warning');
+                    showNotification("🤖 Auto Feed OFF");
+                }
+            }
+
+            maxFeed() {
+                // Feed until hunger is 0 or balance runs out
+                let fed = 0;
+                while (gameState.hunger > 0 && fed < 10) {
+                    if (gameState.balance >= 500000000) {
+                        this.feedTiger(500000000, 10, 2);
+                        fed++;
+                    } else {
+                        break;
+                    }
+                }
+
+                if (fed > 0) {
+                    showFloatingTip(`Max Fed ${fed} times! 🎉`);
+                } else {
+                    showNotification("❌ Not enough balance!");
+                }
+            }
+
+            collectBonus() {
+                const bonus = 50000000000; // 50B bonus
+                gameState.balance += bonus;
+                this.updateDisplay();
+                showFloatingTip(`+${formatNumber(bonus)} CROTOPIA! 🎁`);
+                
+                if ('vibrate' in navigator) {
+                    navigator.vibrate([100, 50, 100]);
+                }
+            }
+
+            updateRecommendedFood() {
+                const recommendBadge = document.getElementById('recommendedFood');
+                if (!recommendBadge) return;
+
+                // Remove previous recommended class
+                document.querySelectorAll('.food-item').forEach(item => {
+                    item.classList.remove('recommended');
+                });
+
+                // Recommend based on hunger and balance
+                let recommended = '';
+                if (gameState.hunger > 70 && gameState.balance >= 6000000000) {
+                    recommended = '🥇 Legendary';
+                    document.querySelector('[data-meat="legendary"]').classList.add('recommended');
+                } else if (gameState.hunger > 50 && gameState.balance >= 3000000000) {
+                    recommended = '🦌 Premium';
+                    document.querySelector('[data-meat="premium"]').classList.add('recommended');
+                } else if (gameState.balance >= 1500000000) {
+                    recommended = '🥩 Beef';
+                    document.querySelector('[data-meat="beef"]').classList.add('recommended');
+                } else if (gameState.balance >= 800000000) {
+                    recommended = '🐟 Fish';
+                    document.querySelector('[data-meat="fish"]').classList.add('recommended');
+                } else {
+                    recommended = '🐔 Chicken';
+                    document.querySelector('[data-meat="chicken"]').classList.add('recommended');
+                }
+
+                recommendBadge.textContent = `Recommended: ${recommended}`;
+            }
+
+            updateDisplay() {
+                // Update balance display
+                document.getElementById('balanceDisplay').textContent = formatNumber(gameState.balance);
+                document.getElementById('expDisplay').textContent = gameState.experience;
+                
+                // Update all vital status bars
+                this.updateVitalBars();
+                
+                // Update all attribute values
+                this.updateAttributes();
+                
+                // Update tiger level and info
+                const currentLevel = getCurrentTigerLevel();
+                const levelIndex = tigerLevels.findIndex(level => level.name === currentLevel.name) + 1;
+                
+                document.getElementById('tigerLevel').textContent = currentLevel.name;
+                document.getElementById('tigerName').textContent = currentLevel.name;
+                document.getElementById('tigerDescription').textContent = currentLevel.description;
+                document.getElementById('levelNumber').textContent = levelIndex;
+                
+                // Update tiger mood based on overall condition
+                this.updateMood();
+                
+                // Update overall condition badge
+                this.updateOverallCondition();
+                
+                // Update hunting display
+                updateHuntingDisplay();
+                
+                // Update recommended food
+                this.updateRecommendedFood();
+            }
+
+            updateVitalBars() {
+                // Hunger
+                const hungerBar = document.getElementById('hungerBar');
+                const hungerPercent = document.getElementById('hungerPercent');
+                if (hungerBar && hungerPercent) {
+                    hungerBar.style.width = `${gameState.hunger}%`;
+                    hungerPercent.textContent = gameState.hunger;
+                    hungerBar.className = gameState.hunger > 70 ? 'progress-bar bg-danger' :
+                                         gameState.hunger > 40 ? 'progress-bar bg-warning' :
+                                         'progress-bar bg-success';
+                }
+
+                // Thirst
+                const thirstBar = document.getElementById('thirstBar');
+                const thirstPercent = document.getElementById('thirstPercent');
+                if (thirstBar && thirstPercent) {
+                    thirstBar.style.width = `${gameState.thirst}%`;
+                    thirstPercent.textContent = gameState.thirst;
+                    thirstBar.className = gameState.thirst > 70 ? 'progress-bar bg-info' : 
+                                         gameState.thirst > 40 ? 'progress-bar bg-primary' :
+                                         'progress-bar bg-success';
+                }
+
+                // Energy
+                const energyBar = document.getElementById('energyBar');
+                const energyPercent = document.getElementById('energyPercent');
+                if (energyBar && energyPercent) {
+                    energyBar.style.width = `${gameState.energy}%`;
+                    energyPercent.textContent = gameState.energy;
+                    energyBar.className = gameState.energy < 30 ? 'progress-bar bg-danger' :
+                                         gameState.energy < 60 ? 'progress-bar bg-warning' :
+                                         'progress-bar bg-success';
+                }
+
+                // Happiness
+                const happinessBar = document.getElementById('happinessBar');
+                const happinessPercent = document.getElementById('happinessPercent');
+                if (happinessBar && happinessPercent) {
+                    happinessBar.style.width = `${gameState.happiness}%`;
+                    happinessPercent.textContent = gameState.happiness;
+                    happinessBar.className = gameState.happiness < 30 ? 'progress-bar bg-danger' :
+                                            gameState.happiness < 60 ? 'progress-bar bg-warning' :
+                                            'progress-bar bg-success';
+                }
+
+                // Cleanliness
+                const cleanlinessBar = document.getElementById('cleanlinessBar');
+                const cleanlinessPercent = document.getElementById('cleanlinessPercent');
+                if (cleanlinessBar && cleanlinessPercent) {
+                    cleanlinessBar.style.width = `${gameState.cleanliness}%`;
+                    cleanlinessPercent.textContent = gameState.cleanliness;
+                    cleanlinessBar.className = gameState.cleanliness < 30 ? 'progress-bar bg-danger' :
+                                              gameState.cleanliness < 60 ? 'progress-bar bg-warning' :
+                                              'progress-bar bg-primary';
+                }
+            }
+
+            updateAttributes() {
+                // Update all attribute bars and values
+                const attrs = ['strength', 'speed', 'intelligence', 'agility', 'charisma', 'affection'];
+                attrs.forEach(attr => {
+                    const bar = document.getElementById(`${attr}Bar`);
+                    const value = document.getElementById(`${attr}Value`);
+                    if (bar && value && gameState[attr] !== undefined) {
+                        bar.style.width = `${gameState[attr]}%`;
+                        value.textContent = gameState[attr];
+                    }
+                });
+            }
+
+            updateMood() {
+                // Calculate mood based on all factors
+                const avgCondition = (
+                    (100 - gameState.hunger) +
+                    (100 - gameState.thirst) +
+                    gameState.energy +
+                    gameState.happiness +
+                    gameState.cleanliness
+                ) / 5;
+
+                let moodEmoji;
+                if (avgCondition > 80) {
+                    moodEmoji = "😍"; // Excellent
+                    gameState.mood = 'excellent';
+                } else if (avgCondition > 60) {
+                    moodEmoji = "😊"; // Happy
+                    gameState.mood = 'happy';
+                } else if (avgCondition > 40) {
+                    moodEmoji = "😐"; // Neutral
+                    gameState.mood = 'neutral';
+                } else if (avgCondition > 20) {
+                    moodEmoji = "😟"; // Sad
+                    gameState.mood = 'sad';
+                } else {
+                    moodEmoji = "😢"; // Critical
+                    gameState.mood = 'critical';
+                }
+
+                document.getElementById('tigerMood').textContent = moodEmoji;
+            }
+
+            updateOverallCondition() {
+                const avgCondition = (
+                    (100 - gameState.hunger) +
+                    (100 - gameState.thirst) +
+                    gameState.energy +
+                    gameState.happiness +
+                    gameState.cleanliness
+                ) / 5;
+
+                const badge = document.getElementById('overallCondition');
+                if (!badge) return;
+
+                if (avgCondition > 80) {
+                    badge.textContent = 'Excellent';
+                    badge.className = 'ms-auto badge bg-success';
+                } else if (avgCondition > 60) {
+                    badge.textContent = 'Good';
+                    badge.className = 'ms-auto badge bg-primary';
+                } else if (avgCondition > 40) {
+                    badge.textContent = 'Fair';
+                    badge.className = 'ms-auto badge bg-warning';
+                } else {
+                    badge.textContent = 'Poor';
+                    badge.className = 'ms-auto badge bg-danger';
+                }
+            }
+
+            startHungerSystem() {
+                // Natural needs increase over time (every 30 seconds)
+                setInterval(() => {
+                    gameState.hunger = Math.min(100, gameState.hunger + 2);
+                    gameState.thirst = Math.min(100, gameState.thirst + 3);
+                    gameState.energy = Math.max(0, gameState.energy - 1);
+                    gameState.cleanliness = Math.max(0, gameState.cleanliness - 1);
+                    
+                    // Happiness decreases if other needs are not met
+                    if (gameState.hunger > 70 || gameState.thirst > 70 || gameState.energy < 30 || gameState.cleanliness < 40) {
+                        gameState.happiness = Math.max(0, gameState.happiness - 2);
+                    } else {
+                        gameState.happiness = Math.min(100, gameState.happiness + 1);
+                    }
+                    
+                    this.updateDisplay();
+                    
+                    // Alert for critical conditions
+                    if (gameState.hunger >= 90) {
+                        showNotification("🍽️ Your cat is very hungry!");
+                    }
+                    if (gameState.thirst >= 90) {
+                        showNotification("💧 Your cat is very thirsty!");
+                    }
+                    if (gameState.energy <= 10) {
+                        showNotification("😴 Your cat is exhausted!");
+                    }
+                    if (gameState.cleanliness <= 20) {
+                        showNotification("🛁 Your cat needs a bath!");
+                    }
+                }, 30000); // Every 30 seconds
+            }
+
+            startAutoSave() {
+                // Auto-save every 30 seconds
+                setInterval(() => {
+                    this.saveGame();
+                }, 30000);
+            }
+
+            saveGame() {
+                try {
+                    const saveData = {
+                        ...gameState,
+                        savedAt: Date.now()
+                    };
+                    localStorage.setItem('bnbtigerGame3D', JSON.stringify(saveData));
+                } catch (e) {
+                    console.error('Failed to save game:', e);
+                }
+            }
+
+            loadGame() {
+                try {
+                    const saved = localStorage.getItem('bnbtigerGame3D');
+                    if (saved) {
+                        const saveData = JSON.parse(saved);
+                        Object.assign(gameState, saveData);
+                    }
+                } catch (e) {
+                    console.error('Failed to load game:', e);
+                }
+            }
+        }
+
+        // Format large numbers for display
+        function formatNumber(num) {
+            if (num >= 1000000000) {
+                return (num / 1000000000).toFixed(2) + 'B';
+            } else if (num >= 1000000) {
+                return (num / 1000000).toFixed(2) + 'M';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(2) + 'K';
+            } else {
+                return num.toString();
+            }
+        }
+
+        // Tiger levels and their requirements with real images - CROTOPIA Empire Scale
+        const tigerLevels = [
+            { name: "Royal Kitten", emoji: "🐱", image: "memes/01_Royal_Welcome.png", minXP: 0, description: "A crowned kitten waving from the gates of Crotopia.", canHunt: false, huntInterval: 0, huntReward: 0, multiplier: 1 },
+            { name: "Throne Cat", emoji: "👑", image: "memes/02_Royal_Throne.png", minXP: 100, description: "Settled on the royal throne above the clouds.", canHunt: true, huntInterval: 300000, huntReward: 500000000, multiplier: 1.2 },
+            { name: "Sky Explorer", emoji: "🚀", image: "memes/03_Space_Rocket.png", minXP: 500, description: "Racing rockets between the floating islands.", canHunt: true, huntInterval: 240000, huntReward: 1200000000, multiplier: 1.5 },
+            { name: "Kingdom Cat", emoji: "🏰", image: "memes/04_Kingdom_Adventure.png", minXP: 1500, description: "Mapping every castle in the Crotopia sky.", canHunt: true, huntInterval: 180000, huntReward: 2500000000, multiplier: 2.0 },
+            { name: "Coin Royal", emoji: "🪙", image: "memes/05_Golden_Coins.png", minXP: 4000, description: "Counting golden coins for the kingdom.", canHunt: true, huntInterval: 120000, huntReward: 4500000000, multiplier: 2.5 },
+            { name: "Vacation Royal", emoji: "🌴", image: "memes/06_Royal_Vacation.png", minXP: 8000, description: "A legendary cat on a royal day off.", canHunt: true, huntInterval: 90000, huntReward: 7500000000, multiplier: 3.0 },
+            { name: "Family Pride", emoji: "💛", image: "memes/07_Cat_Family.png", minXP: 15000, description: "The whole royal family has joined the realm.", canHunt: true, huntInterval: 60000, huntReward: 12000000000, multiplier: 4.0 },
+            { name: "Sunset Royal", emoji: "🌅", image: "memes/08_Sunset_Kingdom.png", minXP: 25000, description: "Watching the kingdom glow at sunset.", canHunt: true, huntInterval: 45000, huntReward: 20000000000, multiplier: 5.0 },
+            { name: "Crotopia Power", emoji: "⚡", image: "memes/10_Crotopia_Power.png", minXP: 50000, description: "The crowned cat at full Crotopia power.", canHunt: true, huntInterval: 30000, huntReward: 35000000000, multiplier: 6.0 }
+        ];
+
+        // Save game to localStorage
+        function saveGame() {
+            try {
+                const saveData = {
+                    ...gameState,
+                    saveTime: Date.now(),
+                    version: "1.0"
+                };
+                localStorage.setItem('bnbtiger_game_save', JSON.stringify(saveData));
+                gameState.lastSaveTime = Date.now();
+                console.log('Game saved successfully');
+            } catch (error) {
+                console.error('Failed to save game:', error);
+            }
+        }
+
+        // Load game from localStorage
+        function loadGame() {
+            try {
+                const saveData = localStorage.getItem('bnbtiger_game_save');
+                if (saveData) {
+                    const parsedData = JSON.parse(saveData);
+                    
+                    // Merge saved data with current gameState
+                    Object.keys(parsedData).forEach(key => {
+                        if (key !== 'version' && key !== 'saveTime') {
+                            gameState[key] = parsedData[key];
+                        }
+                    });
+                    
+                    // Handle offline time progression
+                    if (parsedData.saveTime) {
+                        const offlineTime = Date.now() - parsedData.saveTime;
+                        const offlineMinutes = Math.floor(offlineTime / 60000);
+                        
+                        if (offlineMinutes > 0) {
+                            handleOfflineProgression(offlineMinutes);
+                        }
+                    }
+                    
+                    console.log('Game loaded successfully');
+                    showNotification(`🎮 Welcome back! You were offline for ${Math.floor((Date.now() - parsedData.saveTime) / 60000)} minutes.`);
+                    return true;
+                }
+            } catch (error) {
+                console.error('Failed to load game:', error);
+            }
+            return false;
+        }
+
+        // Handle offline progression
+        function handleOfflineProgression(offlineMinutes) {
+            const currentLevel = getCurrentTigerLevel();
+            
+            if (currentLevel.canHunt) {
+                // Calculate offline hunting rewards
+                const huntInterval = currentLevel.huntInterval / 60000; // Convert to minutes
+                const huntsCompleted = Math.floor(offlineMinutes / huntInterval);
+                
+                if (huntsCompleted > 0) {
+                    const offlineRewards = huntsCompleted * currentLevel.huntReward;
+                    gameState.balance += offlineRewards;
+                    gameState.totalHunted += offlineRewards;
+                    gameState.huntCount += huntsCompleted;
+                    
+                    showNotification(`🏹 Offline Hunting: Earned ${formatNumber(offlineRewards)} BNBT from ${huntsCompleted} hunts!`);
+                }
+            }
+            
+            // Increase hunger over time (but cap it)
+            const hungerIncrease = Math.min(offlineMinutes * 0.5, 30); // Max 30 hunger increase
+            gameState.hunger = Math.min(gameState.hunger + hungerIncrease, 100);
+        }
+
+
+        // Initialize game
+        function initGame() {
+            // Try to load saved game first
+            const gameLoaded = loadGame();
+            
+            if (!gameLoaded) {
+                showNotification('🎮 Welcome to Crotopia Pet Game! Start by feeding your cat.');
+            }
+            
+            updateDisplay();
+            attachEventListeners();
+            startHuntingSystem();
+            
+            // Auto hunger decrease
+            setInterval(increaseHunger, 30000); // Increase hunger every 30 seconds
+            
+            // Auto-save every 30 seconds
+            setInterval(saveGame, 30000);
+            
+            // Save game when user leaves the page
+            window.addEventListener('beforeunload', saveGame);
+            window.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    saveGame();
+                }
+            });
+        }
+        
+        // Start hunting system
+        function startHuntingSystem() {
+            // Check for hunts every second
+            setInterval(() => {
+                const currentLevel = getCurrentTigerLevel();
+                if (currentLevel.canHunt && !gameState.isHunting) {
+                    const now = Date.now();
+                    const timeSinceLastHunt = now - gameState.lastHuntTime;
+                    
+                    if (timeSinceLastHunt >= currentLevel.huntInterval) {
+                        startHunt();
+                    }
+                }
+                updateHuntingDisplay();
+            }, 1000);
+        }
+        
+        // Start a hunt
+        function startHunt() {
+            const currentLevel = getCurrentTigerLevel();
+            if (!currentLevel.canHunt) return;
+            
+            gameState.isHunting = true;
+            gameState.lastHuntTime = Date.now();
+            
+            // Show hunting animation
+            const tigerSprite = document.getElementById('tigerSprite');
+            tigerSprite.classList.add('hunting');
+            
+            // Hunt duration (2-4 seconds)
+            const huntDuration = 2000 + Math.random() * 2000;
+            
+            setTimeout(() => {
+                completeHunt();
+                tigerSprite.classList.remove('hunting');
+            }, huntDuration);
+            
+            updateHuntingDisplay();
+        }
+        
+        // Complete a hunt
+        function completeHunt() {
+            const currentLevel = getCurrentTigerLevel();
+            if (!currentLevel.canHunt) return;
+            
+            gameState.isHunting = false;
+            
+            // Calculate hunt reward (base reward + random bonus)
+            const baseReward = currentLevel.huntReward;
+            const bonusReward = Math.floor(Math.random() * (baseReward * 0.5)); // Up to 50% bonus
+            const totalReward = baseReward + bonusReward;
+            
+            // Add reward to balance
+            gameState.balance += totalReward;
+            gameState.totalHunted += totalReward;
+            gameState.huntCount++;
+            
+            // Show success animation
+            const tigerSprite = document.getElementById('tigerSprite');
+            tigerSprite.classList.add('hunt-success');
+            setTimeout(() => tigerSprite.classList.remove('hunt-success'), 800);
+            
+            // Show prey animation and notification
+            showHuntResult(totalReward);
+            
+            updateDisplay();
+        }
+        
+        // Show hunt result
+        function showHuntResult(reward) {
+            const preyEmojis = ["🐰", "🦌", "🐗", "🐺", "🦎", "🐍"];
+            const randomPrey = preyEmojis[Math.floor(Math.random() * preyEmojis.length)];
+            
+            // Create prey element
+            const preyElement = document.createElement('div');
+            preyElement.style.cssText = `
+                position: absolute;
+                top: 50%;
+                left: 60%;
+                font-size: 40px;
+                z-index: 100;
+                pointer-events: none;
+            `;
+            preyElement.textContent = randomPrey;
+            preyElement.classList.add('prey-appear');
+            
+            const tigerContainer = document.querySelector('.tiger-container');
+            tigerContainer.appendChild(preyElement);
+            
+            // Remove prey after animation
+            setTimeout(() => {
+                tigerContainer.removeChild(preyElement);
+            }, 2000);
+            
+            // Show notification
+            showNotification(`🏹 Hunt successful! Caught ${randomPrey} for +${formatNumber(reward)} CROTOPIA!`);
+        }
+
+        // Update all display elements - Mobile Pet Game Style
+        function updateDisplay() {
+            // Update top status bar with dynamic balance
+            const balanceElements = document.querySelectorAll('.bg-gradient-primary small');
+            if (balanceElements.length > 0) {
+                balanceElements[0].innerHTML = `💰 ${formatNumber(gameState.balance)}`;
+            }
+            
+            // Update experience display
+            const expDisplay = document.getElementById('expDisplay');
+            if (expDisplay) {
+                expDisplay.textContent = gameState.experience;
+            }
+            
+            // Update hunger bar and percentage
+            const hungerBar = document.getElementById('hungerBar');
+            const hungerPercent = document.getElementById('hungerPercent');
+            if (hungerBar && hungerPercent) {
+                hungerBar.style.width = `${gameState.hunger}%`;
+                hungerPercent.textContent = gameState.hunger;
+                
+                // Update hunger bar color
+                if (gameState.hunger > 70) {
+                    hungerBar.className = 'progress-bar bg-danger';
+                } else if (gameState.hunger > 40) {
+                    hungerBar.className = 'progress-bar bg-warning';
+                } else {
+                    hungerBar.className = 'progress-bar bg-success';
+                }
+            }
+            
+            // Update tiger level and info
+            const currentLevel = getCurrentTigerLevel();
+            const levelIndex = tigerLevels.findIndex(level => level.name === currentLevel.name) + 1;
+            
+            document.getElementById('tigerLevel').textContent = currentLevel.name;
+            document.getElementById('tigerName').textContent = currentLevel.name;
+            document.getElementById('tigerDescription').textContent = currentLevel.description;
+            
+            // Update level number badge
+            const levelNumber = document.getElementById('levelNumber');
+            if (levelNumber) {
+                levelNumber.textContent = levelIndex;
+            }
+            
+            // Update tiger image (use real image if available)
+            const tigerSprite = document.getElementById('tigerSprite');
+            if (currentLevel.image) {
+                tigerSprite.src = currentLevel.image;
+                tigerSprite.alt = currentLevel.name;
+            } else {
+                // Fallback for levels without images
+                tigerSprite.src = "memes/10_Crotopia_Power.png";
+                tigerSprite.alt = currentLevel.name;
+            }
+            
+            // Update stats bars
+            document.getElementById('strengthBar').style.width = `${gameState.strength}%`;
+            document.getElementById('speedBar').style.width = `${gameState.speed}%`;
+            document.getElementById('intelligenceBar').style.width = `${gameState.intelligence}%`;
+            
+            // Update tiger mood based on hunger
+            const moodEmoji = gameState.hunger > 80 ? "😢" : gameState.hunger > 50 ? "😐" : gameState.hunger > 20 ? "😊" : "😍";
+            document.getElementById('tigerMood').textContent = moodEmoji;
+            
+            // Update hunting status
+            updateHuntingDisplay();
+        }
+        
+        // Update hunting display
+        function updateHuntingDisplay() {
+            const currentLevel = getCurrentTigerLevel();
+            const huntingStatusEl = document.getElementById('huntingStatus');
+            const huntingIncomeEl = document.getElementById('huntingIncome');
+            const nextHuntTimerEl = document.getElementById('nextHuntTimer');
+            const totalHuntedEl = document.getElementById('totalHunted');
+            const huntCountEl = document.getElementById('huntCount');
+            
+            // Update total hunted stats
+            totalHuntedEl.textContent = `${formatNumber(gameState.totalHunted)} CROTOPIA`;
+            huntCountEl.textContent = `${gameState.huntCount} hunts`;
+            
+            if (!currentLevel.canHunt) {
+                huntingStatusEl.innerHTML = "Cat is too young to hunt";
+                huntingIncomeEl.textContent = "0 CROTOPIA/min";
+                nextHuntTimerEl.textContent = "--:--";
+            } else {
+                const incomePerMinute = Math.round((currentLevel.huntReward * 60000) / currentLevel.huntInterval);
+                huntingIncomeEl.textContent = `${formatNumber(incomePerMinute)} CROTOPIA/min`;
+                
+                if (gameState.isHunting) {
+                    huntingStatusEl.innerHTML = '<span class="hunting-indicator"></span>Currently hunting...';
+                } else {
+                    huntingStatusEl.innerHTML = "Ready to hunt";
+                }
+                
+                // Update next hunt timer
+                const now = Date.now();
+                const timeSinceLastHunt = now - gameState.lastHuntTime;
+                const timeUntilNextHunt = Math.max(0, currentLevel.huntInterval - timeSinceLastHunt);
+                
+                if (timeUntilNextHunt > 0) {
+                    const minutes = Math.floor(timeUntilNextHunt / 60000);
+                    const seconds = Math.floor((timeUntilNextHunt % 60000) / 1000);
+                    nextHuntTimerEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                } else {
+                    nextHuntTimerEl.textContent = "Ready!";
+                }
+            }
+        }
+
+        // Get current tiger level
+        function getCurrentTigerLevel() {
+            for (let i = tigerLevels.length - 1; i >= 0; i--) {
+                if (gameState.experience >= tigerLevels[i].minXP) {
+                    return tigerLevels[i];
+                }
+            }
+            return tigerLevels[0];
+        }
+
+        // Attach event listeners to buy buttons
+        function attachEventListeners() {
+            const buyButtons = document.querySelectorAll('.buy-meat-btn');
+            buyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const meatItem = this.closest('.meat-item');
+                    const price = parseInt(meatItem.dataset.price);
+                    const hungerRestore = parseInt(meatItem.dataset.hunger);
+                    const expGain = parseInt(meatItem.dataset.exp);
+                    const meatType = meatItem.dataset.meat;
+                    
+                    buyMeat(price, hungerRestore, expGain, meatType);
+                });
+            });
+        }
+
+        // Buy meat function
+        function buyMeat(price, hungerRestore, expGain, meatType) {
+            if (gameState.balance >= price) {
+                // Deduct cost
+                gameState.balance -= price;
+                
+                // Get current level before feeding
+                const oldLevel = getCurrentTigerLevel();
+                
+                // Feed tiger
+                gameState.hunger = Math.max(0, gameState.hunger - hungerRestore);
+                gameState.experience += expGain;
+                
+                // Increase stats slightly
+                gameState.strength += Math.floor(expGain / 10);
+                gameState.speed += Math.floor(expGain / 12);
+                gameState.intelligence += Math.floor(expGain / 8);
+                
+                // Cap stats at 100
+                gameState.strength = Math.min(100, gameState.strength);
+                gameState.speed = Math.min(100, gameState.speed);
+                gameState.intelligence = Math.min(100, gameState.intelligence);
+                
+                // Check for level up
+                const newLevel = getCurrentTigerLevel();
+                const leveledUp = oldLevel.name !== newLevel.name;
+                
+                // Update display
+                updateDisplay();
+                
+                // Save game after purchase
+                saveGame();
+                
+                // Show feeding animation
+                const tigerSprite = document.getElementById('tigerSprite');
+                tigerSprite.classList.add('feeding');
+                setTimeout(() => tigerSprite.classList.remove('feeding'), 500);
+                
+                // Show notification
+                showNotification(`Fed your cat ${getMeatEmoji(meatType)}! +${expGain} XP`);
+                
+                // Show level up notification
+                if (leveledUp) {
+                    setTimeout(() => {
+                        tigerSprite.classList.add('level-up');
+                        showNotification(`🎉 Level Up! Your cat evolved to ${newLevel.name}!`);
+                        setTimeout(() => tigerSprite.classList.remove('level-up'), 1000);
+                    }, 1000);
+                }
+                
+            } else {
+                showNotification("❌ Not enough CROTOPIA tokens!");
+            }
+        }
+
+        // Get meat emoji
+        function getMeatEmoji(meatType) {
+            const emojis = {
+                chicken: "🐔",
+                beef: "🥩",
+                fish: "🐟",
+                premium: "🦌",
+                legendary: "🥇"
+            };
+            return emojis[meatType] || "🥩";
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'game-notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                if (notification.parentNode) {
+                document.body.removeChild(notification);
+                }
+            }, 2000);
+        }
+
+        // Show floating tip (in 3D scene)
+        function showFloatingTip(text) {
+            const tip = document.getElementById('floatingTip');
+            const tipText = document.getElementById('tipText');
+            
+            if (tip && tipText) {
+                tipText.textContent = text;
+                tip.style.display = 'block';
+                
+                // Remove and re-add animation
+                tip.style.animation = 'none';
+                setTimeout(() => {
+                    tip.style.animation = 'tipFloat 2s ease-in-out';
+                }, 10);
+                
+                setTimeout(() => {
+                    tip.style.display = 'none';
+                }, 2000);
+            }
+        }
+
+        // Increase hunger over time
+        function increaseHunger() {
+            gameState.hunger = Math.min(100, gameState.hunger + 5);
+            updateDisplay();
+            
+            if (gameState.hunger >= 90) {
+                showNotification("🍽️ Your cat is very hungry!");
+            }
+        }
+
+        // Add some bonus tokens periodically
+        function addBonusTokens() {
+            const bonus = 1000000; // 1 million bonus tokens
+            gameState.balance += bonus;
+            updateDisplay();
+            showNotification(`🎁 Bonus! +${formatNumber(bonus)} BNBT tokens!`);
+        }
+
+        // Initialize 3D game when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize new 3D game system
+            window.game = new GameManager();
+            
+            // Keep old initGame() for compatibility
+            // initGame();
+            
+            // Add bonus tokens every 2 minutes
+            setInterval(addBonusTokens, 120000);
+        });
+    </script>
+    
+    <!-- Custom Video Preloader Styles -->
+    <style>
+        /* Enhanced video preloader */
+        .preloader {
+            background: #000000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .preloader-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 2;
+        }
+        
+        .preloader-video {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 50%;
+            animation: videoFloat 4s ease-in-out infinite;
+        }
+        
+        .preloader-logo {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 50%;
+            animation: videoFloat 4s ease-in-out infinite;
+        }
+        
+        .preloader-text {
+            margin-top: 30px;
+            opacity: 0;
+            animation: textFadeIn 2s ease-in-out 0.5s forwards;
+        }
+        
+        .preloader-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        
+        .preloader-text p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .loading-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .loading-dots span {
+            width: 12px;
+            height: 12px;
+            background: #ffc107;
+            border-radius: 50%;
+            animation: dotBounce 1.4s ease-in-out infinite both;
+            box-shadow: 0 0 10px rgba(255, 193, 7, 0.8);
+        }
+        
+        .loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+        .loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+        .loading-dots span:nth-child(3) { animation-delay: 0s; }
+        
+        
+        @keyframes videoFloat {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+            }
+            50% {
+                transform: translateY(-20px) scale(1.05);
+            }
+        }
+        
+        @keyframes textFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes dotBounce {
+            0%, 80%, 100% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            40% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .preloader-video, .preloader-logo {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .preloader-text h2 {
+                font-size: 2rem;
+            }
+            
+            .preloader-text p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .preloader-video, .preloader-logo {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .preloader-text h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Preloader fade out */
+        .preloader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+        }
+
+        /* Mobile Game Optimization Styles */
+        @supports (padding: max(0px)) {
+            body {
+                padding-left: env(safe-area-inset-left);
+                padding-right: env(safe-area-inset-right);
+            }
+        }
+
+        /* Enhanced Mobile Pet Game Experience */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 1.5rem 0 1rem !important;
+                min-height: auto;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.6rem !important;
+                line-height: 1.2;
+            }
+            
+            .hero-section p {
+                font-size: 0.95rem !important;
+            }
+            
+            /* Pet Game Style Interface */
+            .container-fluid {
+                padding-left: 8px !important;
+                padding-right: 8px !important;
+            }
+            
+            /* Main Tiger Display - Mobile Optimized */
+            .main-tiger-img {
+                width: 160px !important;
+                height: 160px !important;
+                border-radius: 18px !important;
+                box-shadow: 0 6px 20px rgba(0,0,0,0.25) !important;
+            }
+            
+            .tiger-main-container {
+                min-height: 280px !important;
+                margin: 0 4px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            }
+            
+            .tiger-display-area {
+                height: 180px !important;
+            }
+            
+            /* Floating Mood - Mobile */
+            .tiger-mood-float {
+                font-size: 1.8rem !important;
+                top: -12px !important;
+                right: 15px !important;
+            }
+            
+            /* Level Badge - Mobile */
+            .level-badge {
+                font-size: 0.75rem !important;
+                padding: 3px 8px !important;
+                top: -8px !important;
+                left: 15px !important;
+            }
+            
+            /* Status Cards */
+            .status-card {
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                border: none;
+            }
+            
+            /* Food Shop - Mobile Optimized */
+            .food-shop-card {
+                margin: 0 4px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                border: none;
+            }
+            
+            .food-item {
+                transition: all 0.2s ease;
+                cursor: pointer;
+                border: 1px solid #e0e0e0;
+            }
+            
+            .food-item:active {
+                transform: scale(0.95);
+                box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            }
+            
+            .food-icon {
+                font-size: 1.6rem !important;
+            }
+            
+            /* Buttons - Pet Game Style */
+            .buy-meat-btn {
+                font-size: 0.65rem !important;
+                padding: 6px 4px !important;
+                border-radius: 8px !important;
+                min-height: 28px;
+                font-weight: 600;
+                border: none;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            
+            .buy-meat-btn:active {
+                transform: translateY(1px);
+                box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            }
+            
+            /* Stats Mini Cards */
+            .stat-mini {
+                border: 1px solid rgba(255,255,255,0.2);
+                box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            }
+            
+            /* Hunt Stats Card */
+            .hunt-stats-card {
+                margin: 0 4px;
+                border: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            /* Evolution cards mobile optimization */
+            .evolution-tiger-img {
+                width: 50px !important;
+                height: 50px !important;
+                border-radius: 8px !important;
+            }
+            
+            .col-lg-2.col-md-4.col-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+
+        /* Ultra-mobile (phones) */
+        @media (max-width: 480px) {
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.5rem !important;
+            }
+            
+            /* Single column layout for very small screens */
+            .col-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            
+            /* Smaller tiger for tiny screens */
+            .tiger-sprite-img {
+                width: 80px !important;
+                height: 80px !important;
+            }
+            
+            /* Stack evolution cards in 2 columns */
+            .col-lg-2.col-md-4.col-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+
+        /* Pet Game Animations - Updated for new interface */
+        .main-tiger-img {
+            transition: all 0.3s ease;
+        }
+        
+        .main-tiger-img.feeding {
+            transform: scale(1.1);
+            filter: brightness(1.2) saturate(1.2);
+        }
+        
+        .main-tiger-img.hunting {
+            animation: hunting 0.5s ease-in-out infinite alternate;
+        }
+        
+        .main-tiger-img.hunt-success {
+            animation: huntSuccess 0.8s ease-out;
+        }
+        
+        .main-tiger-img.level-up {
+            animation: levelUp 1.5s ease-out;
+        }
+
+        /* Floating Animation for Mood */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .tiger-mood-float {
+            animation: float 2s ease-in-out infinite;
+        }
+        
+        @keyframes hunting {
+            from { transform: translateX(-5px) rotate(-2deg); }
+            to { transform: translateX(5px) rotate(2deg); }
+        }
+        
+        @keyframes huntSuccess {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); filter: brightness(1.3) saturate(1.2); }
+            50% { transform: scale(1.05); filter: brightness(1.2); }
+            75% { transform: scale(1.08); filter: brightness(1.25); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes levelUp {
+            0% { transform: scale(1); filter: brightness(1); }
+            20% { transform: scale(1.15); filter: brightness(1.4) saturate(1.3); }
+            40% { transform: scale(1.1); filter: brightness(1.3); }
+            60% { transform: scale(1.12); filter: brightness(1.35); }
+            80% { transform: scale(1.05); filter: brightness(1.2); }
+            100% { transform: scale(1); filter: brightness(1); }
+        }
+
+        /* Pulse Animation for Level Badge */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .level-badge {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Food Item Hover Effects */
+        .food-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Sparkle Effect for Premium Items */
+        .bg-gradient-warning {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bg-gradient-warning::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        /* Game notifications */
+        .game-notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 1000;
+            animation: slideDown 0.3s ease-out;
+        }
+        
+        @media (max-width: 768px) {
+            .game-notification {
+                top: env(safe-area-inset-top, 20px);
+                left: 10px;
+                right: 10px;
+                transform: none;
+                text-align: center;
+            }
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+        
+        /* Touch feedback */
+        .btn:active {
+            transform: scale(0.95);
+        }
+        
+        /* Prevent text selection on game elements */
+        .tiger-container, .meat-item, .bg-light.border.rounded-3 {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        /* Improve button visibility on mobile */
+        @media (max-width: 768px) {
+            .btn {
+                min-height: 44px; /* Apple's recommended touch target size */
+                font-weight: 600;
+            }
+            
+            .btn-sm {
+                min-height: 36px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</body>
+
+</html>

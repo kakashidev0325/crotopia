@@ -1,0 +1,43 @@
+{
+  "name": "Crotopia",
+  "short_name": "CROTOPIA",
+  "description": "The royal cat kingdom. Name Crotopia, ticker CROTOPIA.",
+  "start_url": "/nft.html",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#ffc107",
+  "orientation": "portrait-primary",
+  "categories": ["entertainment", "games", "utilities"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "logo.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}
+
+
