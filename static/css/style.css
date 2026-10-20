@@ -4062,6 +4062,20 @@ small,
     padding-bottom: clamp(6.5rem, 7.89vw + 1rem, 9.375rem);
     position: relative;
     isolation: isolate;
+    overflow: hidden;
+}
+.banner-character {
+    position: absolute;
+    z-index: 0;
+    right: 3%;
+    bottom: 0;
+    height: 92%;
+    width: auto;
+    max-width: 34%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    pointer-events: none;
 }
 /* Container Customization */
 .container-max {
